@@ -3,7 +3,6 @@
 @data: 
 @des: 触摸按键代码
 ****************************************************************************************************/
-
 #include "tpad.h"
 #include "delay.h"
 #include "usart.h"
@@ -37,7 +36,7 @@ u8 TPAD_Init(u8 psc)
     for (i = 2; i < 8; i++)
         temp += buf[i]; //取中间的6个数据进行平均
     tpad_default_val = temp / 6;
-    printf("tpad_default_val:%d\r\n", tpad_default_val);
+
     if (tpad_default_val > TPAD_ARR_MAX_VAL / 2)
         return 1; //初始化遇到超过TPAD_ARR_MAX_VAL/2的数值,不正常!
     return 0;
@@ -112,7 +111,6 @@ u8 TPAD_Scan(u8 mode)
     {
         if (keyen == 0)
             res = 1; // keyen==0,有效
-        // printf("r:%d\r\n",rval);
         keyen = 3; //至少要再过3次之后才能按键有效
     }
     if (keyen)

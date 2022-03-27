@@ -31,13 +31,13 @@ void Beep_Alarm(u32 temp, u32 humi)
 {
 	if(temp > threshold_temp){
 		BEEP = BEEP_ON;
-		delay_ms(50);
+		delay_ms(500);
 		BEEP = BEEP_OFF;
 	}
 
 	if(humi < threshold_humi){
 		BEEP = BEEP_ON;
-		delay_ms(50);
+		delay_ms(500);
 		BEEP = BEEP_OFF;
 	}
 }

@@ -8,21 +8,12 @@
 void EXTI_MyInit(void)
 {
 	EXTI_InitTypeDef EI;		// 设置EXTI外部中断初始化的结构体
-	// EXTI_InitTypeDef EI_WKUP
+
 	NVIC_InitTypeDef NI;		// 设置NVIC中断优先级初始化的结构体
 
 	KEY_Init();				// 初始化IO口为输入模式
 
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);		// 打开GPIO端口复用时钟, 为了使得GPIO (GPIO_EXTILineConfig函数使用了EXTICR), 使用了该寄存器就必须开启AFIO
-	// GPIO_EXTILineConfig(GPIO_PortSourceGPIOE, GPIO_PinSource4);
-
-
-	// // 设置
-	// EI.EXTI_Line = EXTI_Line4;					// 设置EXTI线为中断线4
-	// EI.EXTI_LineCmd = ENABLE;					// 使能
-	// EI.EXTI_Mode = EXTI_Mode_Interrupt;			// 设置中断模式为中断模式
-	// EI.EXTI_Trigger = EXTI_Trigger_Falling;		// 设置触发方式为"下降沿触发"
-	// EXTI_Init(&EI);
 
 	EI.EXTI_Line = EXTI_Line0;
 	EI.EXTI_LineCmd = ENABLE;
@@ -30,17 +21,9 @@ void EXTI_MyInit(void)
 	EI.EXTI_Trigger = EXTI_Trigger_Falling;
 	EXTI_Init(&EI);
 
-	// NI.NVIC_IRQChannel = EXTI4_IRQn;			// 设置中断通道为EXTI4通道
-	// NI.NVIC_IRQChannelCmd = ENABLE;				// 使能
-	// NI.NVIC_IRQChannelPreemptionPriority = 1;	// 设置抢占优先级为1
-	// NI.NVIC_IRQChannelSubPriority = 1;			// 设置响应优先级为1
-	// NVIC_Init(&NI);
-
 	NI.NVIC_IRQChannel = EXTI0_IRQn;
 	NI.NVIC_IRQChannelCmd = ENABLE;
 	NI.NVIC_IRQChannelPreemptionPriority = 1;
 	NI.NVIC_IRQChannelSubPriority = 2;
-	NVIC_Init(&NI);
-
-	
+	NVIC_Init(&NI);	
 }

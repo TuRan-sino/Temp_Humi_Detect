@@ -21,13 +21,3 @@ void Stm32_Clock_Init(u8 PLL)
 		temp&=0x03;
 	}    
 }
-
-
-void Init_Threshold(u32 *temp, u32 *humi)
-{
-	temp = (u32 *)malloc(sizeof(u32));
-	humi = (u32 *)malloc(sizeof(u32));
-
-	*temp = 35;
-	*temp = 24;
-}

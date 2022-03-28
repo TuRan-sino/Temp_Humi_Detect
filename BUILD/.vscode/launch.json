@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "stlink",
+            "servertype": "openocd",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f1x.cfg"
+            ],
+            "svdFile": "C:\\Users\\TuRan\\Work\\Graduation\\CORE\\STM32F103.svd",
+            "executable": "build\\TuRan\\KEIL.elf",
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "both"
+        }
+    ]
+}

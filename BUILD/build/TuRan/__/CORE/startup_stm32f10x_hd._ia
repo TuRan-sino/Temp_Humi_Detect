@@ -1,0 +1,1 @@
+-c -x assembler-with-cpp -mthumb -mcpu=cortex-m3 -g -I./../CORE -I./../USER -I./../FWLIB/inc -I./../SYSTEM -I./.eide/deps -I./../MODULE -I./../HARDWARE -o ./build/TuRan/__/CORE/startup_stm32f10x_hd.o -MMD ./../CORE/startup_stm32f10x_hd.s

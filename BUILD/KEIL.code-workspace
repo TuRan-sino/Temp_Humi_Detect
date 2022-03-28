@@ -1,0 +1,80 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "*.asm": "assembly",
+            "vimrc": "vimrc",
+            "*.s": "arm",
+            ".eideignore": "ignore",
+            "led.h": "c",
+            "delay.h": "c",
+            "sys_t.h": "c",
+            "stm32f10x.h": "c",
+            "key.h": "c",
+            "beep.h": "c",
+            "exti.h": "c",
+            "irqhandler.h": "c",
+            "usart.h": "c",
+            "stdio.h": "c",
+            "stdint.h": "c",
+            "iwdg.h": "c",
+            "wwdg.h": "c",
+            "core_cm3.h": "c",
+            "misc.h": "c",
+            "timer.h": "c",
+            "errno.h": "c",
+            "unistd.h": "c",
+            "cstdio": "c",
+            "stm32f10x_usart.h": "c",
+            "print.h": "c",
+            "stdlib.h": "c",
+            "pwm.h": "c",
+            "cstdint": "c",
+            "capacitance.h": "c",
+            "tftlcd.h": "c",
+            "spi.h": "c",
+            "sys.h": "c",
+            "font.h": "c",
+            "alientek_log.h": "c",
+            "adc.h": "c",
+            "stm32f10x_adc.h": "c",
+            "lcd.h": "c",
+            "tpad.h": "c",
+            "iic.h": "c",
+            "dht11.h": "c",
+            "hc05.h": "c"
+        },
+        "files.autoGuessEncoding": true,
+        "[yaml]": {
+            "editor.insertSpaces": true,
+            "editor.tabSize": 4,
+            "editor.autoIndent": "advanced"
+        },
+        "commentTranslate.hover.enabled": true
+    },
+    "extensions": {
+        "recommendations": [
+            "cl.eide",
+            "keroc.hex-fmt",
+            "xiaoyongdong.srecord",
+            "hars.cppsnippets",
+            "zixuanwang.linkerscript",
+            "redhat.vscode-yaml",
+            "dan-c-underwood.arm",
+            "zixuanwang.linkerscript",
+            "marus25.cortex-debug"
+        ]
+    },
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": []
+    }
+}

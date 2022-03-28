@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "win32",
+            "configurationProvider": "cl.eide",
+            "intelliSenseMode": "windows-gcc-arm"
+        }
+    ],
+    "version": 4
+}

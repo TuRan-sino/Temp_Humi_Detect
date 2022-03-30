@@ -41,7 +41,7 @@ int main(void)
 	LCD_Init();			   								// 初始化LCD  
 	EXTI_MyInit();										// 初始化PA0(KEY_UP), PE4(KEY_0) 外部中断
 	TPAD_Init(6);										// 初始化电容触摸按键
-	DHT11_Init_Mine();										// 初始化DHT11
+	DHT11_Init();
 	Usart_Init_USART1(921600);							// 初始化串口1, 波特率为115200
 
 
@@ -49,14 +49,14 @@ int main(void)
 
 
 	while(1){
-		DHT11_Read_Data_Mine((u8 *)&temperature, (u8 *)&humidity);
-
 		LCD_SetColor_Ground(BLUE, WHITE);
 		LCD_ShowxNum(0, 40, temperature, 4, 16, 0);
 		LCD_ShowxNum(0, 120, humidity, 4, 16, 0);
 		LCD_ShowxNum(0, 197, carbon, 4, 16, 0);
 		LCD_ShowxNum(180, 240-17, threshold_temp, 3, 16, 0);
 		LCD_ShowxNum(210, 240-17, threshold_humi, 3, 16, 0);
+
+		DHT11_Read_Data((u8 *)&temperature, (u8 *)&humidity);
 
 		Beep_Alarm(temperature, humidity);		
 	}

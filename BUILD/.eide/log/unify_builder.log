@@ -5626,3 +5626,165 @@ In file included from ./../USER/IRQHandler.c:1:
 [2022-03-30 15:23:35]	[done]
 	build successfully !
 
+[2022-03-30 15:30:41]	[done]
+	build successfully !
+
+[2022-03-30 15:32:52]	[done]
+	build successfully !
+
+[2022-03-30 15:40:13]	[done]
+	build successfully !
+
+[2022-03-30 15:43:14]	[done]
+	build successfully !
+
+[2022-03-30 15:44:23]	[done]
+	build successfully !
+
+[2022-03-30 15:47:47]	[done]
+	build successfully !
+
+[2022-03-30 15:48:12]	[done]
+	build successfully !
+
+[2022-03-30 15:48:32]	[done]
+	build successfully !
+
+[2022-03-30 15:55:42]	[done]
+	build successfully !
+
+[2022-03-30 15:55:55]	[done]
+	build successfully !
+
+[2022-03-30 15:56:06]	[done]
+	build successfully !
+
+[2022-03-30 15:57:04]	[done]
+	build successfully !
+
+[2022-03-30 15:57:54]	[done]
+	build successfully !
+
+[2022-03-30 15:58:04]	[done]
+	build successfully !
+
+[2022-03-30 15:58:36]	[done]
+	build successfully !
+
+[2022-03-30 15:59:20]	[done]
+	build successfully !
+
+[2022-03-30 16:06:13]	[done]
+	build successfully !
+
+[2022-03-30 16:06:58]	[done]
+	build successfully !
+
+[2022-03-30 16:07:04]	[done]
+	build successfully !
+
+[2022-03-30 16:09:14]	[done]
+	build successfully !
+
+[2022-03-30 16:15:40]	[done]
+	build successfully !
+
+[2022-03-30 16:18:02]	[done]
+	build successfully !
+
+[2022-03-30 16:18:28]	[done]
+	build successfully !
+
+[2022-03-30 16:18:47]	[done]
+	build successfully !
+
+[2022-03-30 16:18:56]	[done]
+	build successfully !
+
+[2022-03-30 16:19:36]	[done]
+	build successfully !
+
+[2022-03-30 16:27:19]	link failed !, exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x01a98] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/dht.o: in function `DHT11_Init':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/dht.c:130: undefined reference to `DHT11_SendStart'
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       32208 B       128 KB     24.57%
+             RAM:        1608 B         8 KB     19.63%
+       MEMORY_B1:          0 GB         0 GB
+collect2.exe: error: ld returned 1 exit status
+
+
+[2022-03-30 16:28:22]	[done]
+	build successfully !
+
+[2022-03-30 16:30:13]	[done]
+	build successfully !
+
+[2022-03-30 16:30:40]	[done]
+	build successfully !
+
+[2022-03-30 16:31:26]	[done]
+	build successfully !
+
+[2022-03-30 16:34:57]	[done]
+	build successfully !
+
+[2022-03-30 16:38:07]	[done]
+	build successfully !
+
+[2022-03-30 16:38:14]	[done]
+	build successfully !
+
+[2022-03-30 16:38:40]	[done]
+	build successfully !
+
+[2022-03-30 16:41:14]	[done]
+	build successfully !
+
+[2022-03-30 16:42:47]	[done]
+	build successfully !
+
+[2022-03-30 16:51:52]	[done]
+	build successfully !
+
+[2022-03-30 16:53:30]	link failed !, exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x01a98] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/USER/main.o: in function `main':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../USER/main.c:44: undefined reference to `DHT11_Init'
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       32028 B       128 KB     24.44%
+             RAM:        1608 B         8 KB     19.63%
+       MEMORY_B1:          0 GB         0 GB
+collect2.exe: error: ld returned 1 exit status
+
+
+[2022-03-30 16:53:45]	[done]
+	build successfully !
+
+[2022-03-30 16:54:05]	[done]
+	build successfully !
+
+[2022-03-30 16:55:38]	[done]
+	build successfully !
+
+[2022-03-30 16:55:53]	[done]
+	build successfully !
+
+[2022-03-30 16:56:54]	[done]
+	build successfully !
+
+[2022-03-30 16:57:58]	[done]
+	build successfully !
+
+[2022-03-30 16:58:11]	[done]
+	build successfully !
+
+[2022-03-30 16:58:28]	[done]
+	build successfully !
+
+[2022-03-30 17:05:32]	[done]
+	build successfully !
+

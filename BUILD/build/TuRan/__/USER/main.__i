@@ -1,1 +1,0 @@
--std=c11 -c -xc -mthumb -mcpu=cortex-m3 -Og -Wall -g -ffunction-sections -fdata-sections -I./../CORE -I./../USER -I./../FWLIB/inc -I./../SYSTEM -I./.eide/deps -I./../MODULE -I./../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -o ./build/TuRan/__/USER/main.o -MMD ./../USER/main.c

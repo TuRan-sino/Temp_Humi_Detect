@@ -102,15 +102,15 @@ void EXTI0_IRQHandler(void)
 }
 
 
-void TIM3_IRQHandler(void)
-{
-	if(TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET){
+// void TIM3_IRQHandler(void)
+// {
+// 	if(TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET){
 
-		LED0 = !LED0;
-		delay_ms(500);
-		LED0 = !LED0;
+// 		LED0 = !LED0;
+// 		delay_ms(500);
+// 		LED0 = !LED0;
 		
 
-		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
-	}
-}
+// 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+// 	}
+// }

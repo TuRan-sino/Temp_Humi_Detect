@@ -28,7 +28,6 @@ volatile u32 carbon = 17;
 
 
 void Modual_Init_LCD(void);
-void Modual_Init_DHT11(void);
 
 
 int main(void)
@@ -42,17 +41,15 @@ int main(void)
 	LCD_Init();			   								// 初始化LCD  
 	EXTI_MyInit();										// 初始化PA0(KEY_UP), PE4(KEY_0) 外部中断
 	TPAD_Init(6);										// 初始化电容触摸按键
+	DHT11_Init_Mine();										// 初始化DHT11
 	Usart_Init_USART1(921600);							// 初始化串口1, 波特率为115200
-	TIM_Init_Timer3(TIM3, 49999, 7199);					// 初始化定时器3
 
-
-	Modual_Init_DHT11();
 
 	Modual_Init_LCD();
 
 
 	while(1){
-		DHT11_Read_Data((u8 *)&temperature, (u8 *)&humidity);
+		DHT11_Read_Data_Mine((u8 *)&temperature, (u8 *)&humidity);
 
 		LCD_SetColor_Ground(BLUE, WHITE);
 		LCD_ShowxNum(0, 40, temperature, 4, 16, 0);
@@ -66,23 +63,6 @@ int main(void)
 }
 
 
-void Modual_Init_DHT11(void)
-{	
-	int time_dht11 = 0;
-	while(DHT11_Init())	
-	{
-		LCD_Clear(DARK);
-		LCD_ShowString(30,130,200,16,16,"DHT11 Error");
-		delay_ms(200);
-		LCD_Fill(30,130,239,130+16,WHITE);
- 		delay_ms(200);
-		time_dht11 ++;
-		if(time_dht11 > 20){
-			time_dht11 = 0;
-			break;
-		}
-	}	
-}
 
 void Modual_Init_LCD(void)
 {

@@ -25,10 +25,10 @@ void USART1_IRQHandler(void) //串口1中断服务程序
 		res = USART_ReceiveData(USART1);
 		if(res == 'q'){
 			printf("TEMP: %d\r\nHUMI: %d\r\n", (int)temperature, (int)humidity);
-			delay_ms(500);
+			Delay_ms(500);
 		}else if(res == 'w'){
 			printf("Threshold Temp: %d \r\nThreshold Humi: %d\r\n", (int)threshold_temp, (int)threshold_humi);
-			delay_ms(500);
+			Delay_ms(500);
 		}else if(res == 'd'){
 			threshold_humi ++;
 		}else if(res == 'f'){
@@ -57,7 +57,7 @@ void EXTI0_IRQHandler(void)
 
 	BEEP = BEEP_OFF;	
 	LED_Init();
-	delay_init(72);
+	Delay_Init();
 	KEY_Init();
 	LCD_Clear(DARK);
 
@@ -107,7 +107,7 @@ void EXTI0_IRQHandler(void)
 // 	if(TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET){
 
 // 		LED0 = !LED0;
-// 		delay_ms(500);
+// 		Delay_ms(500);
 // 		LED0 = !LED0;
 		
 

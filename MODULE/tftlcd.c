@@ -53,7 +53,7 @@ static void LCD_Gpio_Init(void)
     LCD_PWR = 0;
 
     LCD_RST = 0;
-    delay_ms(120);
+    Delay_ms(120);
     LCD_RST = 1; 
 }
 
@@ -682,11 +682,11 @@ void Display_ALIENTEK_LOGO(u16 x, u16 y)
 {
     LCD_Gpio_Init();	//硬件接口初始化
 
-    delay_ms(120);
+    Delay_ms(120);
     /* Sleep Out */
     LCD_Write_Cmd(0x11);
     /* wait for power stability */
-    delay_ms(120);
+    Delay_ms(120);
 
     /* Memory Data Access Control */
     LCD_Write_Cmd(0x36);

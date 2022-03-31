@@ -5788,3 +5788,86 @@ collect2.exe: error: ld returned 1 exit status
 [2022-03-30 17:05:32]	[done]
 	build successfully !
 
+[2022-03-31 11:51:42]	[done]
+	build successfully !
+
+[2022-03-31 12:11:17]	link failed !, exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x01a98] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/HARDWARE/beep.o: in function `Beep_Alarm':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../HARDWARE/beep.c:34: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: c:\Users\TuRan\WORK\Graduation\BUILD/./../HARDWARE/beep.c:40: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/HARDWARE/tpad.o: in function `TPAD_Reset':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../HARDWARE/tpad.c:60: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/HARDWARE/tpad.o: in function `TPAD_Init':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../HARDWARE/tpad.c:24: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/DHT11.o: in function `DHT11_Set_Start':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/DHT11.c:53: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/DHT11.c:55: undefined reference to `delay_us'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/DHT11.o: in function `DHT11_Set_Respond':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/DHT11.c:70: undefined reference to `delay_us'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/DHT11.c:78: undefined reference to `delay_us'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/DHT11.o: in function `DHT11_Read_Bit':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/DHT11.c:98: undefined reference to `delay_us'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/DHT11.c:104: undefined reference to `delay_us'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/DHT11.o:c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/DHT11.c:111: more undefined references to `delay_us' follow
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/tftlcd.o: in function `LCD_Gpio_Init':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/tftlcd.c:56: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/tftlcd.o: in function `LCD_Init':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/tftlcd.c:685: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/tftlcd.c:689: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/USER/IRQHandler.o: in function `USART1_IRQHandler':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../USER/IRQHandler.c:28: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: c:\Users\TuRan\WORK\Graduation\BUILD/./../USER/IRQHandler.c:31: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/USER/IRQHandler.o: in function `EXTI0_IRQHandler':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../USER/IRQHandler.c:60: undefined reference to `delay_init'
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       33704 B       128 KB     25.71%
+             RAM:        1612 B         8 KB     19.68%
+       MEMORY_B1:          0 GB         0 GB
+collect2.exe: error: ld returned 1 exit status
+
+
+[2022-03-31 12:12:22]	link failed !, exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x01a98] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/HARDWARE/tpad.o: in function `TPAD_Reset':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../HARDWARE/tpad.c:60: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/HARDWARE/tpad.o: in function `TPAD_Init':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../HARDWARE/tpad.c:24: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/DHT11.o: in function `DHT11_Set_Start':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/DHT11.c:53: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/tftlcd.o: in function `LCD_Gpio_Init':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/tftlcd.c:56: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/tftlcd.o: in function `LCD_Init':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/tftlcd.c:685: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/tftlcd.o:c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/tftlcd.c:689: more undefined references to `delay_ms' follow
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/USER/IRQHandler.o: in function `EXTI0_IRQHandler':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../USER/IRQHandler.c:60: undefined reference to `delay_init'
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       33768 B       128 KB     25.76%
+             RAM:        1612 B         8 KB     19.68%
+       MEMORY_B1:          0 GB         0 GB
+collect2.exe: error: ld returned 1 exit status
+
+
+[2022-03-31 12:12:47]	link failed !, exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x01a98] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/tftlcd.o: in function `LCD_Gpio_Init':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/tftlcd.c:56: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/MODULE/tftlcd.o: in function `LCD_Init':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/tftlcd.c:685: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: c:\Users\TuRan\WORK\Graduation\BUILD/./../MODULE/tftlcd.c:689: undefined reference to `delay_ms'
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/USER/IRQHandler.o: in function `EXTI0_IRQHandler':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../USER/IRQHandler.c:60: undefined reference to `delay_init'
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       33768 B       128 KB     25.76%
+             RAM:        1612 B         8 KB     19.68%
+       MEMORY_B1:          0 GB         0 GB
+collect2.exe: error: ld returned 1 exit status
+
+
+[2022-03-31 12:13:36]	[done]
+	build successfully !
+

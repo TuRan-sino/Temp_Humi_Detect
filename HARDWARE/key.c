@@ -39,7 +39,7 @@ u8 KEY_Scan(u8 mode)
 	if(mode == 1)		// 假设mode = 1 --> 连按模式, 设置key_state始终为1, 即上一次状态始终无效
 		key_state = 1;
 	if(key_state == 1 && (KEY0 == 0 || KEY1 == 0 || KEY_UP == 1)){
-		Delay_Myms(50);	// 去抖动函数
+		Delay_ms(50);	// 去抖动函数
 		key_state = 0;	// 设置本次函数过后的state为有效
 		
 		if(KEY0 == 0)

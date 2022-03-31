@@ -34,14 +34,14 @@ int main(void)
 {
 	Stm32_Clock_Init(9);								// 初始化系统时钟设置
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);		// 初始化NVIC优先级分组
-	delay_init(72);										// 初始化延迟函数
+	Delay_Init();										// 初始化延迟函数
 	LED_Init();		  									// 初始化与LED连接的硬件接口
 	Beep_Init();										// 初始化蜂鸣器
 	KEY_Init();											// 初始化按键
 	LCD_Init();			   								// 初始化LCD  
 	EXTI_MyInit();										// 初始化PA0(KEY_UP), PE4(KEY_0) 外部中断
 	TPAD_Init(6);										// 初始化电容触摸按键
-	DHT11_Init();
+	DHT11_Init();										// 初始化DHT11
 	Usart_Init_USART1(921600);							// 初始化串口1, 波特率为115200
 
 

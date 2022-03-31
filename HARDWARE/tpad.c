@@ -8,6 +8,8 @@
 #include "usart.h"
 
 #define TPAD_ARR_MAX_VAL 0XFFFF //最大的ARR值
+#define TPAD_GATE_VAL 100 //触摸的门限值,也就是必须大于tpad_default_val+TPAD_GATE_VAL,才认为是有效触摸.
+
 vu16 tpad_default_val = 0; //空载的时候(没有手按下),计数器需要的时间
 
 u8 TPAD_Init(u8 psc)
@@ -19,7 +21,7 @@ u8 TPAD_Init(u8 psc)
     for (i = 0; i < 10; i++) //连续读取10次
     {
         buf[i] = TPAD_Get_Val();
-        delay_ms(10);
+        Delay_ms(10);
     }
     for (i = 0; i < 9; i++) //排序
     {
@@ -55,7 +57,7 @@ void TPAD_Reset(void)
     GPIO_Init(GPIOA, &GPIO_InitStructure);
     GPIO_ResetBits(GPIOA, GPIO_Pin_1); // PA.1输出0,放电
 
-    delay_ms(5);
+    Delay_ms(5);
 
     TIM_SetCounter(TIM5, 0); //归0
     TIM_ClearITPendingBit(TIM5, TIM_IT_CC2 | TIM_IT_Update); //清除中断标志
@@ -95,7 +97,6 @@ u16 TPAD_Get_MaxVal(u8 n)
 //扫描触摸按键
 // mode:0,不支持连续触发(按下一次必须松开才能按下一次);1,支持连续触发(可以一直按下)
 //返回值:0,没有按下;1,有按下;
-#define TPAD_GATE_VAL 100 //触摸的门限值,也就是必须大于tpad_default_val+TPAD_GATE_VAL,才认为是有效触摸.
 u8 TPAD_Scan(u8 mode)
 {
     static u8 keyen = 0; // 0,可以开始检测;>0,还不能开始检测

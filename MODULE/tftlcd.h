@@ -12,7 +12,7 @@ extern u16	BACK_COLOR;		//默认背景颜色
 #define LCD_Height 	240
 
 //画笔颜色
-#define DARK 0x0000
+#define DARK			 0x0000
 #define WHITE         	 0xFFFF
 #define BLACK         	 0x0000	  
 #define BLUE         	 0x001F  
@@ -75,5 +75,4 @@ void LCD_Show_Image(u16 x, u16 y, u16 width, u16 height, const u8 *p);					//显
 void Display_ALIENTEK_LOGO(u16 x,u16 y);												//显示ALIENTEK LOGO
 
 #endif
-
 

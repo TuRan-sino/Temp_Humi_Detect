@@ -6033,3 +6033,23 @@ compilation terminated.
 [2022-04-01 15:14:46]	[done]
 	build successfully !
 
+[2022-04-01 18:26:43]	compilation failed at : "c:\Users\TuRan\WORK\Graduation\MODULE\LCD.c", exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x018f4] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+./../MODULE/LCD.c: In function 'Option_Shownumber_Temp':
+./../MODULE/LCD.c:27:12: error: 'DARK' undeclared (first use in this function)
+   27 |  LCD_Clear(DARK);
+      |            ^~~~
+./../MODULE/LCD.c:27:12: note: each undeclared identifier is reported only once for each function it appears in
+./../MODULE/LCD.c: In function 'Option_Shownumber_Humi':
+./../MODULE/LCD.c:61:12: error: 'DARK' undeclared (first use in this function)
+   61 |  LCD_Clear(DARK);
+      |            ^~~~
+./../MODULE/LCD.c: In function 'Option_Modify_threshold':
+./../MODULE/LCD.c:94:33: error: 'DARK' undeclared (first use in this function)
+   94 |   LCD_Fill(0, 50, 240, 50 + 32, DARK);
+      |                                 ^~~~
+
+[2022-04-01 18:27:11]	[done]
+	build successfully !
+

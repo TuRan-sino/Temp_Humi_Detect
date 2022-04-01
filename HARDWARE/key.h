@@ -27,7 +27,7 @@
 #define KEY_OFF 1
 
 u8 KEY_Scan(u8 mode);
-void KEY_Init(void);
+void Key_Init(void);
 
 
 #endif

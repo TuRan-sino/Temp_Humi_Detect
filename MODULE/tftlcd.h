@@ -49,10 +49,6 @@ extern u16	BACK_COLOR;		//默认背景颜色
     	LCD_WR:		PB14
     	LCD_CS:		PG7
 */
-#define	LCD_PWR		PGout(8)
-#define	LCD_RST		PGout(6)
-#define	LCD_WR		PBout(14)
-#define	LCD_CS		PGout(7)
 
 
 void LCD_Init(void);																	//初始化

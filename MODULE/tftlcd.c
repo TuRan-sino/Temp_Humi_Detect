@@ -4,6 +4,7 @@
 #include "font.h"
 #include "spi.h"
 #include "alientek_log.h"
+#include "LCD.h"
 
 
 //LCD缓存大小设置，修改此值时请注意！！！！修改这两个值时可能会影响以下函数	LCD_Clear/LCD_Fill/LCD_DrawLine
@@ -91,7 +92,7 @@ static void LCD_SPI_Send(u8 *data, u32 size)
  *
  * @return  void
  */
-static void LCD_Write_Cmd(u8 cmd)
+ void LCD_Write_Cmd(u8 cmd)
 {
     LCD_WR = 0;
 
@@ -261,167 +262,6 @@ void LCD_Fill(u16 x_start, u16 y_start, u16 x_end, u16 y_end, u16 color)
     }
 }
 
-/**
- * 画点函数
- *
- * @param   x,y		画点坐标
- *
- * @return  void
- */
-void LCD_Draw_Point(u16 x, u16 y)
-{
-    LCD_Address_Set(x, y, x, y);
-    LCD_Write_HalfWord(POINT_COLOR);
-}
-
-/**
- * 画点带颜色函数
- *
- * @param   x,y		画点坐标
- *
- * @return  void
- */
-void LCD_Draw_ColorPoint(u16 x, u16 y,u16 color)
-{
-    LCD_Address_Set(x, y, x, y);
-    LCD_Write_HalfWord(color);
-}
-
-/**
- * @brief	画线函数(直线、斜线)
- *
- * @param   x1,y1	起点坐标
- * @param   x2,y2	终点坐标
- *
- * @return  void
- */
-void LCD_DrawLine(u16 x1, u16 y1, u16 x2, u16 y2)
-{
-    u16 t;
-    int xerr = 0, yerr = 0, delta_x, delta_y, distance;
-    int incx, incy, row, col;
-    u32 i = 0;
-
-    if(y1 == y2)
-    {
-        /*快速画水平线*/
-        LCD_Address_Set(x1, y1, x2, y2);
-
-        for(i = 0; i < x2 - x1; i++)
-        {
-            lcd_buf[2 * i] = POINT_COLOR >> 8;
-            lcd_buf[2 * i + 1] = POINT_COLOR;
-        }
-
-        LCD_WR = 1;
-        LCD_SPI_Send(lcd_buf, (x2 - x1) * 2);
-        return;
-    }
-
-    delta_x = x2 - x1;
-    delta_y = y2 - y1;
-    row = x1;
-    col = y1;
-
-    if(delta_x > 0)incx = 1;
-
-    else if(delta_x == 0)incx = 0;
-
-    else
-    {
-        incx = -1;
-        delta_x = -delta_x;
-    }
-
-    if(delta_y > 0)incy = 1;
-
-    else if(delta_y == 0)incy = 0;
-
-    else
-    {
-        incy = -1;
-        delta_y = -delta_y;
-    }
-
-    if(delta_x > delta_y)distance = delta_x;
-
-    else distance = delta_y;
-
-    for(t = 0; t <= distance + 1; t++)
-    {
-        LCD_Draw_Point(row, col);
-        xerr += delta_x ;
-        yerr += delta_y ;
-
-        if(xerr > distance)
-        {
-            xerr -= distance;
-            row += incx;
-        }
-
-        if(yerr > distance)
-        {
-            yerr -= distance;
-            col += incy;
-        }
-    }
-}
-
-/**
- * @brief	画一个矩形
- *
- * @param   x1,y1	起点坐标
- * @param   x2,y2	终点坐标
- *
- * @return  void
- */
-void LCD_DrawRectangle(u16 x1, u16 y1, u16 x2, u16 y2)
-{
-    LCD_DrawLine(x1, y1, x2, y1);
-    LCD_DrawLine(x1, y1, x1, y2);
-    LCD_DrawLine(x1, y2, x2, y2);
-    LCD_DrawLine(x2, y1, x2, y2);
-}
-
-/**
- * @brief	画一个圆
- *
- * @param   x0,y0	圆心坐标
- * @param   r       圆半径
- *
- * @return  void
- */
-void LCD_Draw_Circle(u16 x0, u16 y0, u8 r)
-{
-    int a, b;
-    int di;
-    a = 0;
-    b = r;
-    di = 3 - (r << 1);
-
-    while(a <= b)
-    {
-        LCD_Draw_Point(x0 - b, y0 - a);
-        LCD_Draw_Point(x0 + b, y0 - a);
-        LCD_Draw_Point(x0 - a, y0 + b);
-        LCD_Draw_Point(x0 - b, y0 - a);
-        LCD_Draw_Point(x0 - a, y0 - b);
-        LCD_Draw_Point(x0 + b, y0 + a);
-        LCD_Draw_Point(x0 + a, y0 - b);
-        LCD_Draw_Point(x0 + a, y0 + b);
-        LCD_Draw_Point(x0 - b, y0 + a);
-        a++;
-
-        if(di < 0)di += 4 * a + 6;
-        else
-        {
-            di += 10 + 4 * (a - b);
-            b--;
-        }
-
-        LCD_Draw_Point(x0 + a, y0 + b);
-    }
-}
 
 /**
  * @brief	显示一个ASCII码字符
@@ -524,39 +364,6 @@ static u32 LCD_Pow(u8 m, u8 n)
     return result;
 }
 
-/**
- * @brief	显示数字,高位为0不显示
- *
- * @param   x,y		起点坐标
- * @param   num		需要显示的数字,数字范围(0~4294967295)
- * @param   len		需要显示的位数
- * @param   size	字体大小
- *
- * @return  void
- */
-void LCD_ShowNum(u16 x, u16 y, u32 num, u8 len, u8 size)
-{
-    u8 t, temp;
-    u8 enshow = 0;
-
-    for(t = 0; t < len; t++)
-    {
-        temp = (num / LCD_Pow(10, len - t - 1)) % 10;
-
-        if(enshow == 0 && t < (len - 1))
-        {
-            if(temp == 0)
-            {
-                LCD_ShowChar(x + (size / 2)*t, y, ' ', size);
-                continue;
-            }
-
-            else enshow = 1;
-        }
-
-        LCD_ShowChar(x + (size / 2)*t, y, temp + '0', size);
-    }
-}
 
 
 
@@ -633,43 +440,7 @@ void LCD_ShowString(u16 x, u16 y, u16 width, u16 height, u8 size, char *p)
 }
 
 
-/**
- * @brief	显示图片
- *
- * @remark	Image2Lcd取模方式：	C语言数据/水平扫描/16位真彩色(RGB565)/高位在前		其他的不要选
- *
- * @param   x,y		起点坐标
- * @param   width	图片宽度
- * @param   height	图片高度
- * @param   p		图片缓存数据起始地址
- *
- * @return  void
- */
-void LCD_Show_Image(u16 x, u16 y, u16 width, u16 height, const u8 *p)
-{
-    if(x + width > LCD_Width || y + height > LCD_Height)
-    {
-        return;
-    }
 
-    LCD_Address_Set(x, y, x + width - 1, y + height - 1);
-
-    LCD_WR = 1;
-
-    LCD_SPI_Send((u8 *)p, width * height * 2);
-}
-
-/**
- * @brief	LCD初始化
- *
- * @param   x,y		显示坐标
- *
- * @return  void
- */
-void Display_ALIENTEK_LOGO(u16 x, u16 y)
-{
-    LCD_Show_Image(x, y, 240, 240, gImage_alientek_log);
-}
 
 /**
  * @brief	LCD初始化

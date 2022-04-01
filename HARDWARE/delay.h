@@ -3,10 +3,6 @@
 #include "sys.h"
 
 
-void delay_init(u8 SYSCLK);
-void delay_ms(u16 nms);
-void delay_us(u32 nus);
-
 void Delay_Init(void);
 void Delay_us(u32 nus);
 void Delay_ms(u16 nms);

@@ -167,7 +167,7 @@ u8 DHT11_Read_Data(u8 *temp, u8 *humi)
  * 			初始化时先将PG0设置为输出模式, 以便开始向data口发送开始信号
  * @retval 
 */
-void DHT11_Init(void)
+void Dht11_Init(void)
 {
 	GPIO_InitTypeDef GIT;
 	GIT.GPIO_Mode = GPIO_Mode_Out_PP;		// 设置为输出模式: 推挽输出

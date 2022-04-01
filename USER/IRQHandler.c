@@ -56,14 +56,14 @@ void EXTI0_IRQHandler(void)
 	u16 x_end = 240;
 
 	BEEP = BEEP_OFF;	
-	LED_Init();
+	Led_Init();
 	Delay_Init();
-	KEY_Init();
+	Key_Init();
 	LCD_Clear(DARK);
 
 	while(1){
 		key = KEY_Scan(0);
-		Lcd_SetColor_Ground(DARK, WHITE);
+		Lcd_Set_Ground(DARK, WHITE);
 		LCD_ShowString(60, 0, 240, 32, 32, "Option");
 		LCD_ShowString(0, 50, 240, 32, 32, "Change Temp");
 		LCD_ShowString(0, 100, 240, 32, 32, "Change Humi");
@@ -92,7 +92,7 @@ void EXTI0_IRQHandler(void)
 	}
 
 	LCD_Clear(DARK);
-	Lcd_SetColor_Ground(RED, WHITE);	
+	Lcd_Set_Ground(RED, WHITE);	
 	LCD_Clear(DARK);
 	LCD_ShowString(0, 0, 240, 32, 32, "temperature");
 	LCD_ShowString(0, 80, 240, 32, 32, "humidity");

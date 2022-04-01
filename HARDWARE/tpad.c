@@ -12,7 +12,7 @@
 
 vu16 tpad_default_val = 0; //空载的时候(没有手按下),计数器需要的时间
 
-u8 TPAD_Init(u8 psc)
+u8 Tpad_Init(u8 psc)
 {
     u16 buf[10];
     u16 temp;

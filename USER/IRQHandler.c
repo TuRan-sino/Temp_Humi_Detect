@@ -4,7 +4,6 @@
 #include "key.h"
 #include "led.h"
 #include "timer.h"
-#include "tftlcd.h"
 #include "LCD.h"
 #include "tpad.h"
 #include "beep.h"
@@ -59,23 +58,23 @@ void EXTI0_IRQHandler(void)
 	Led_Init();
 	Delay_Init();
 	Key_Init();
-	LCD_Clear(DARK);
+	Lcd_Show_Clear(DARK);
 
 	while(1){
 		key = KEY_Scan(0);
 		Lcd_Set_Ground(DARK, WHITE);
-		LCD_ShowString(60, 0, 240, 32, 32, "Option");
-		LCD_ShowString(0, 50, 240, 32, 32, "Change Temp");
-		LCD_ShowString(0, 100, 240, 32, 32, "Change Humi");
+		Lcd_Show_String(60, 0, 240, 32, 32, "Option");
+		Lcd_Show_String(0, 50, 240, 32, 32, "Change Temp");
+		Lcd_Show_String(0, 100, 240, 32, 32, "Change Humi");
 		if(key){
 			switch(key){
 				case KEY0_PRESS:
 					if(count % 2 == 0){
-						LCD_Fill(x_start, 50, x_end, 82, RED);
-						LCD_Fill(x_start, 100, x_end, 132, DARK);
+						Lcd_Show_Fill(x_start, 50, x_end, 82, RED);
+						Lcd_Show_Fill(x_start, 100, x_end, 132, DARK);
 					}else{
-						LCD_Fill(x_start, 100, x_end, 132, RED);
-						LCD_Fill(x_start, 50, x_end, 82, DARK);
+						Lcd_Show_Fill(x_start, 100, x_end, 132, RED);
+						Lcd_Show_Fill(x_start, 50, x_end, 82, DARK);
 					}
 					count ++;
 					break;
@@ -91,26 +90,26 @@ void EXTI0_IRQHandler(void)
 		if(TPAD_Scan(0))	break;
 	}
 
-	LCD_Clear(DARK);
+	Lcd_Show_Clear(DARK);
 	Lcd_Set_Ground(RED, WHITE);	
-	LCD_Clear(DARK);
-	LCD_ShowString(0, 0, 240, 32, 32, "temperature");
-	LCD_ShowString(0, 80, 240, 32, 32, "humidity");
-	LCD_ShowString(0, 157, 240, 32, 32, "carbon");
+	Lcd_Show_Clear(DARK);
+	Lcd_Show_String(0, 0, 240, 32, 32, "temperature");
+	Lcd_Show_String(0, 80, 240, 32, 32, "humidity");
+	Lcd_Show_String(0, 157, 240, 32, 32, "carbon");
 
 	EXTI_ClearITPendingBit(EXTI_Line0);
 }
 
 
-// void TIM3_IRQHandler(void)
-// {
-// 	if(TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET){
+void TIM3_IRQHandler(void)
+{
+	if(TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET){
 
-// 		LED0 = !LED0;
-// 		Delay_ms(500);
-// 		LED0 = !LED0;
+		LED0 = !LED0;
+		Delay_ms(500);
+		LED0 = !LED0;
 		
 
-// 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
-// 	}
-// }
+		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+	}
+}

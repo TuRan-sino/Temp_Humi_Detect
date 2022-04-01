@@ -12,7 +12,6 @@
 #include "delay.h"
 #include "led.h"
 #include "LCD.h"
-#include "tftlcd.h"
 #include "tpad.h"
 #include "adc.h"
 #include "usart.h"
@@ -49,15 +48,16 @@ int main(void)
 
 	while(1){
 		Lcd_Set_Ground(BLUE, WHITE);
-		LCD_ShowxNum(0, 40, temperature, 4, 16, 0);
-		LCD_ShowxNum(0, 120, humidity, 4, 16, 0);
-		LCD_ShowxNum(0, 197, carbon, 4, 16, 0);
-		LCD_ShowxNum(180, 240-17, threshold_temp, 3, 16, 0);
-		LCD_ShowxNum(210, 240-17, threshold_humi, 3, 16, 0);
+		Lcd_Show_Variable(0, 40, temperature, 4, 16, 0);
+		Lcd_Show_Variable(0, 120, humidity, 4, 16, 0);
+		Lcd_Show_Variable(0, 197, carbon, 4, 16, 0);
+		Lcd_Show_Variable(180, 240-17, threshold_temp, 3, 16, 0);
+		Lcd_Show_Variable(210, 240-17, threshold_humi, 3, 16, 0);
 
 		DHT11_Read_Data((u8 *)&temperature, (u8 *)&humidity);
 
 		Beep_Alarm(temperature, humidity);		
+
 	}
 }
 
@@ -67,8 +67,8 @@ void Modual_Init_LCD(void)
 {
 	// 设置LCD底色
 	Lcd_Set_Ground(RED, WHITE);	
-	LCD_Clear(DARK);
-	LCD_ShowString(0, 0, 240, 32, 32, "temperature");
-	LCD_ShowString(0, 80, 240, 32, 32, "humidity");
-	LCD_ShowString(0, 157, 240, 32, 32, "carbon");
+	Lcd_Show_Clear(DARK);
+	Lcd_Show_String(0, 0, 240, 32, 32, "temperature");
+	Lcd_Show_String(0, 80, 240, 32, 32, "humidity");
+	Lcd_Show_String(0, 157, 240, 32, 32, "carbon");
 }

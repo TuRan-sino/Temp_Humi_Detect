@@ -104,12 +104,6 @@ void Usart_Init_USART3(u32 buterate)
 
 void Usart_SendString(char *s)
 {
-	// int count = 0;
-	// count = sizeof(s) / sizeof(char);
-	// for(int i = 0; i <= count ; i ++){
-	// 	USART_SendData(USART1, s[i]);
-	// 	while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);
-	// }
 	while(*s != '\0'){
 		USART_SendData(USART1, *s);
 		s ++;

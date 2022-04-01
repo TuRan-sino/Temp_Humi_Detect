@@ -5,13 +5,13 @@
 #include "usart.h"
 #include "beep.h"
 
-void EXTI_MyInit(void)
+void Exti_Init(void)
 {
 	EXTI_InitTypeDef EI;		// 设置EXTI外部中断初始化的结构体
 
 	NVIC_InitTypeDef NI;		// 设置NVIC中断优先级初始化的结构体
 
-	KEY_Init();				// 初始化IO口为输入模式
+	Key_Init();				// 初始化IO口为输入模式
 
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);		// 打开GPIO端口复用时钟, 为了使得GPIO (GPIO_EXTILineConfig函数使用了EXTICR), 使用了该寄存器就必须开启AFIO
 

@@ -16,7 +16,7 @@
 
 
 /**
- * @brief 初始化SPI, MISO, MOSI两个以及SCK引脚全部配置成复用推挽输出模式(因为当前开发板设置车轱辘master)
+ * @brief 初始化SPI, MISO, MOSI两个以及SCK引脚全部配置成复用推挽输出模式(因为当前开发板设置为master)
  * @retval void
 */
 void Spi_Init_Spi2()
@@ -33,14 +33,10 @@ void Spi_Init_Spi2()
 	GIT.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOB, &GIT);
 	GIT.GPIO_Mode = GPIO_Mode_AF_PP;
-	GIT.GPIO_Pin = GPIO_Pin_14;
-	GIT.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_Init(GPIOB, &GIT);
-	GIT.GPIO_Mode = GPIO_Mode_AF_PP;
 	GIT.GPIO_Pin = GPIO_Pin_15;
 	GIT.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOB, &GIT);
-	GPIO_SetBits(GPIOB, GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
+	GPIO_SetBits(GPIOB, GPIO_Pin_13 | GPIO_Pin_15);
 	
 	SIT.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_2;		// 确定波特率分频
 	SIT.SPI_CPHA = SPI_CPHA_2Edge;								// 确定CPHA的数值, 当前为: 第二个边沿采集

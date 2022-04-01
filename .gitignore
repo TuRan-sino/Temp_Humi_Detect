@@ -2,3 +2,4 @@
 *.exe
 *.out
 BUILD/build
+BUILD/.eide/log

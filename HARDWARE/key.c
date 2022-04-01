@@ -6,7 +6,7 @@
  * @param void
  * @retval void
 */
-void KEY_Init(void)
+void Key_Init(void)
 {
  	GPIO_InitTypeDef GPIO_InitStructure;
  

@@ -7,7 +7,7 @@
  * @param void
  * @retval void
 */
-void LED_Init(void)
+void Led_Init(void)
 {
 	RCC->APB2ENR |= 1<<3;
 	RCC->APB2ENR |= 1<<6;

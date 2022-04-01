@@ -2,5 +2,5 @@
 #define __EXTI_H__
 #include "sys.h"
 
-void EXTI_MyInit(void);
+void Exti_Init(void);
 #endif

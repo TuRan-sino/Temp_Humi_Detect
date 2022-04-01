@@ -15,6 +15,10 @@
 #include "spi.h"
 
 
+/**
+ * @brief 初始化SPI, MISO, MOSI两个以及SCK引脚全部配置成复用推挽输出模式(因为当前开发板设置车轱辘master)
+ * @retval void
+*/
 void Spi_Init_Spi2()
 {
 	SPI_InitTypeDef SIT;
@@ -80,7 +84,12 @@ u8 Spi2_Transmit(u8 data_send)
 }
 
 
-
+/**
+ * @brief SPI发送一组数据
+ * @param data [u8]: 需要发送的数据
+ * @param length [u8]: 需要发送数据的长度
+ * @retval STATE
+*/
 u8 Spi_Write(u8 *data, u16 length)
 {
 	for(int i = 0; i < length; i ++){

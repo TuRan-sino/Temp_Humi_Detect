@@ -42,4 +42,5 @@ Temperature and humidity detection system based on STM32
 - [x] TFTLCD模块
 - [x] 交互系统
 - [ ] 微信小程序 / 云服务器查看温度
+- [ ] 移植LVGL
 

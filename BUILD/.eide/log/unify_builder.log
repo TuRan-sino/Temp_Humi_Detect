@@ -5871,3 +5871,112 @@ collect2.exe: error: ld returned 1 exit status
 [2022-03-31 12:13:36]	[done]
 	build successfully !
 
+[2022-04-01 11:53:44]	compilation failed at : "c:\Users\TuRan\WORK\Graduation\HARDWARE\spi0.c", exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x018f4] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+./../HARDWARE/spi0.c: In function 'Spi_Init':
+./../HARDWARE/spi0.c:29:2: error: too few arguments to function 'SPI_Init'
+   29 |  SPI_Init()
+      |  ^~~~~~~~
+In file included from ./../SYSTEM/stm32f10x_conf.h:46,
+                 from ./../SYSTEM/stm32f10x.h:8297,
+                 from ./../SYSTEM/sys.h:3,
+                 from ./../HARDWARE/spi0.h:3,
+                 from ./../HARDWARE/spi0.c:8:
+./../FWLIB/inc/stm32f10x_spi.h:447:6: note: declared here
+  447 | void SPI_Init(SPI_TypeDef* SPIx, SPI_InitTypeDef* SPI_InitStruct);
+      |      ^~~~~~~~
+./../HARDWARE/spi0.c:29:12: error: expected ';' before '}' token
+   29 |  SPI_Init()
+      |            ^
+      |            ;
+   30 | }
+      | ~           
+./../HARDWARE/spi0.c:13:18: warning: variable 'SIT' set but not used [-Wunused-but-set-variable]
+   13 |  SPI_InitTypeDef SIT;
+      |                  ^~~
+
+[2022-04-01 11:53:50]	[done]
+	build successfully !
+
+[2022-04-01 11:53:56]	[done]
+	build successfully !
+
+[2022-04-01 13:00:00]	compilation failed at : "c:\Users\TuRan\WORK\Graduation\HARDWARE\spi0.c", exit code: 1
+  at unify_builder.Program.compileByMulThread (System.Int32 thrNum, unify_builder.CmdGenerator+CmdInfo[] cmds, System.Collections.Generic.List`1[T] errLogs) [0x00104] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+  at unify_builder.Program.Main (System.String[] args) [0x0196e] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+./../HARDWARE/spi0.c:60:1: error: unknown type name 'bool'
+   60 | bool SPI2_SetSpeed(u8 Prescaler)
+      | ^~~~
+
+[2022-04-01 13:00:30]	link failed !, exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x01a98] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/HARDWARE/spi0.o: in function `SPI2_SetSpeed':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../HARDWARE/spi0.c:61: multiple definition of `SPI2_SetSpeed'; ./build/TuRan/__/HARDWARE/spi.o:c:\Users\TuRan\WORK\Graduation\BUILD/./../HARDWARE/spi.c:34: first defined here
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       33828 B       128 KB     25.81%
+             RAM:        1612 B         8 KB     19.68%
+       MEMORY_B1:          0 GB         0 GB
+collect2.exe: error: ld returned 1 exit status
+
+
+[2022-04-01 13:00:54]	[done]
+	build successfully !
+
+[2022-04-01 13:12:25]	link failed !, exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x01a98] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+c:/program files (x86)/gnu arm embedded toolchain/10 2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld.exe: ./build/TuRan/__/HARDWARE/spi0.o: in function `SPI2_ReadWriteByte':
+c:\Users\TuRan\WORK\Graduation\BUILD/./../HARDWARE/spi0.c:75: multiple definition of `SPI2_ReadWriteByte'; ./build/TuRan/__/HARDWARE/spi.o:c:\Users\TuRan\WORK\Graduation\BUILD/./../HARDWARE/spi.c:45: first defined here
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       33908 B       128 KB     25.87%
+             RAM:        1612 B         8 KB     19.68%
+       MEMORY_B1:          0 GB         0 GB
+collect2.exe: error: ld returned 1 exit status
+
+
+[2022-04-01 13:12:57]	[done]
+	build successfully !
+
+[2022-04-01 13:27:29]	[done]
+	build successfully !
+
+[2022-04-01 13:27:55]	[done]
+	build successfully !
+
+[2022-04-01 13:29:15]	[done]
+	build successfully !
+
+[2022-04-01 13:29:58]	[done]
+	build successfully !
+
+[2022-04-01 13:43:00]	compilation failed at : "c:\Users\TuRan\WORK\Graduation\HARDWARE\spi0.c", exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x018f4] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+./../HARDWARE/spi0.c: In function 'Spi_Init_Spi2':
+./../HARDWARE/spi0.c:54:2: warning: implicit declaration of function 'Spi2_ReadWriteByte_Spi2'; did you mean 'Spi2_ReadWriteByte_Temp'? [-Wimplicit-function-declaration]
+   54 |  Spi2_ReadWriteByte_Spi2(0XFF);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~
+      |  Spi2_ReadWriteByte_Temp
+./../HARDWARE/spi0.c: At top level:
+./../HARDWARE/spi0.c:98:4: error: conflicting types for 'Spi2_ReadWriteByte_Spi2'
+   98 | u8 Spi2_ReadWriteByte_Spi2(u8 data)
+      |    ^~~~~~~~~~~~~~~~~~~~~~~
+./../HARDWARE/spi0.c:54:2: note: previous implicit declaration of 'Spi2_ReadWriteByte_Spi2' was here
+   54 |  Spi2_ReadWriteByte_Spi2(0XFF);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~
+
+[2022-04-01 13:43:25]	[done]
+	build successfully !
+
+[2022-04-01 13:45:23]	[done]
+	build successfully !
+
+[2022-04-01 13:46:41]	[done]
+	build successfully !
+
+[2022-04-01 13:46:56]	[done]
+	build successfully !
+

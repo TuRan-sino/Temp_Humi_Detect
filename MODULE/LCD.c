@@ -14,7 +14,7 @@ extern u32 threshold_temp;
 extern u32 threshold_humi;
 
 
-void LCD_SetColor_Ground(u32 foreground, u32 background)
+void Lcd_SetColor_Ground(u32 foreground, u32 background)
 {	
 	POINT_COLOR = foreground;
 	BACK_COLOR = background;

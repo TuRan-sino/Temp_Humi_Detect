@@ -76,6 +76,7 @@ typedef enum
   GPIO_Mode_Out_OD = 0x14,
   GPIO_Mode_Out_PP = 0x10,
   GPIO_Mode_AF_OD = 0x1C,
+  // 复用推挽输出
   GPIO_Mode_AF_PP = 0x18
 }GPIOMode_TypeDef;
 

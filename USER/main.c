@@ -49,7 +49,7 @@ int main(void)
 
 
 	while(1){
-		LCD_SetColor_Ground(BLUE, WHITE);
+		Lcd_SetColor_Ground(BLUE, WHITE);
 		LCD_ShowxNum(0, 40, temperature, 4, 16, 0);
 		LCD_ShowxNum(0, 120, humidity, 4, 16, 0);
 		LCD_ShowxNum(0, 197, carbon, 4, 16, 0);
@@ -67,7 +67,7 @@ int main(void)
 void Modual_Init_LCD(void)
 {
 	// 设置LCD底色
-	LCD_SetColor_Ground(RED, WHITE);	
+	Lcd_SetColor_Ground(RED, WHITE);	
 	LCD_Clear(DARK);
 	LCD_ShowString(0, 0, 240, 32, 32, "temperature");
 	LCD_ShowString(0, 80, 240, 32, 32, "humidity");

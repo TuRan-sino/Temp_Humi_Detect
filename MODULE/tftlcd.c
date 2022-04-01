@@ -3,6 +3,7 @@
 #include "tftlcd.h"
 #include "font.h"
 #include "spi.h"
+#include "spi0.h"
 #include "alientek_log.h"
 
 
@@ -26,7 +27,7 @@ u16	BACK_COLOR 	= WHITE;	//背景颜色	默认为白色
  */
 static void LCD_Gpio_Init(void)
 {
-	SPI2_Init();	//初始化SPI2接口
+	Spi_Init_Spi2();	//初始化SPI2接口
 	
     /*
     	LCD_PWR:	PG8

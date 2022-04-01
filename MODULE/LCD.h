@@ -10,7 +10,7 @@
  * @param background [u32] 背景色
  * @retval void 
 */
-void LCD_SetColor_Ground(u32 foreground, u32 background);
+void Lcd_SetColor_Ground(u32 foreground, u32 background);
 void Option_Shownumber_Humi();
 void Option_Shownumber_Temp();
 void Option_Modify_threshold(u8 count);

@@ -3,7 +3,6 @@
 #include "tftlcd.h"
 #include "font.h"
 #include "spi.h"
-#include "spi0.h"
 #include "alientek_log.h"
 
 
@@ -77,10 +76,10 @@ static void LCD_SPI_Send(u8 *data, u32 size)
     for(i = 0; i<=delta; i++)
     {
         if( i==delta )  /* 发送最后一帧数据 */
-            SPI2_WriteData(&data[i*0xFFFF], size%0xFFFF);
+            Spi_Write(&data[i*0xFFFF], size%0xFFFF);
         
         else    /* 超长数据一次发送0xFFFF字节数据 */
-            SPI2_WriteData(&data[i*0xFFFF], 0xFFFF);
+            Spi_Write(&data[i*0xFFFF], 0xFFFF);
     }
 }
 

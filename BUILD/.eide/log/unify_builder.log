@@ -5980,3 +5980,53 @@ collect2.exe: error: ld returned 1 exit status
 [2022-04-01 13:46:56]	[done]
 	build successfully !
 
+[2022-04-01 13:48:19]	[done]
+	build successfully !
+
+[2022-04-01 13:49:22]	[done]
+	build successfully !
+
+[2022-04-01 14:39:54]	[done]
+	build successfully !
+
+[2022-04-01 14:40:06]	[done]
+	build successfully !
+
+[2022-04-01 14:41:31]	[done]
+	build successfully !
+
+[2022-04-01 14:43:27]	[done]
+	build successfully !
+
+[2022-04-01 14:45:58]	[done]
+	build successfully !
+
+[2022-04-01 14:48:29]	[done]
+	build successfully !
+
+[2022-04-01 14:59:23]	[done]
+	build successfully !
+
+[2022-04-01 15:03:47]	[done]
+	build successfully !
+
+[2022-04-01 15:04:15]	[done]
+	build successfully !
+
+[2022-04-01 15:04:27]	[done]
+	build successfully !
+
+[2022-04-01 15:04:48]	[done]
+	build successfully !
+
+[2022-04-01 15:10:34]	compilation failed at : "c:\Users\TuRan\WORK\Graduation\MODULE\tftlcd.c", exit code: 1
+  at unify_builder.Program.Main (System.String[] args) [0x018f4] in <bd240058e6d9420e965b9407b6b7bc53>:0 
+---
+./../MODULE/tftlcd.c:6:10: fatal error: spi0.h: No such file or directory
+    6 | #include "spi0.h"
+      |          ^~~~~~~~
+compilation terminated.
+
+[2022-04-01 15:10:41]	[done]
+	build successfully !
+

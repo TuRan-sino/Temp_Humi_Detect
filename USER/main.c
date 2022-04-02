@@ -20,7 +20,6 @@
 
 volatile u32 threshold_temp = 99; 
 volatile u32 threshold_humi = 0;
-
 volatile u32 temperature = 34;
 volatile u32 humidity = 23;
 volatile u32 carbon = 17;

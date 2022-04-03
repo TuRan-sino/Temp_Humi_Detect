@@ -3,7 +3,7 @@
 #include "sys.h"
 
 
-void TIM_Init_Timer3(TIM_TypeDef* TIMx, u16 arr, u16 psc);
+void Tim_Init_Timer3(u16 arr, u16 psc);
 
 
 #endif

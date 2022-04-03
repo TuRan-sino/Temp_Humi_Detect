@@ -15,5 +15,5 @@
 
 void Usart_Init_USART1(u32 buterate);
 void Usart_Init_USART3(u32 buterate);
-void Usart_SendString(char *s);
+void Usart_SendString(char *s, u8 length);
 #endif

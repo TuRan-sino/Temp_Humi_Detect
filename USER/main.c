@@ -40,6 +40,7 @@ int main(void)
 	Tpad_Init(6);										// 初始化电容触摸按键
 	Dht11_Init();										// 初始化DHT11
 	Usart_Init_USART1(921600);							// 初始化串口1, 波特率为115200
+	Tim_Init_Timer3(9999, 7199);
 
 
 	Modual_Init_LCD();

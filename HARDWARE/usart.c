@@ -102,11 +102,11 @@ void Usart_Init_USART3(u32 buterate)
 	NVIC_Init(&NIT);	
 }
 
-void Usart_SendString(char *s)
+void Usart_SendString(char *s, u8 length)
 {
-	while(*s != '\0'){
+	for(int i = 0; i < length; i ++){
 		USART_SendData(USART1, *s);
 		s ++;
-		while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);
+		while(USART_GetFlagStatus(USART1,USART_FLAG_TC) != SET);
 	}
 }

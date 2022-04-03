@@ -7,7 +7,7 @@
 #include "LCD.h"
 #include "tpad.h"
 #include "beep.h"
-#include "protocol.h"
+#include "HC05.h"
 
 
 extern u32 temperature;
@@ -23,11 +23,9 @@ void USART1_IRQHandler(void) //串口1中断服务程序
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET){
 		res = USART_ReceiveData(USART1);
 		if(res == 'q'){
-			printf("TEMP: %d\r\nHUMI: %d\r\n", (int)temperature, (int)humidity);
-			Delay_ms(500);
+
 		}else if(res == 'w'){
-			printf("Threshold Temp: %d \r\nThreshold Humi: %d\r\n", (int)threshold_temp, (int)threshold_humi);
-			Delay_ms(500);
+
 		}else if(res == 'd'){
 			threshold_humi ++;
 		}else if(res == 'f'){
@@ -37,7 +35,7 @@ void USART1_IRQHandler(void) //串口1中断服务程序
 		}else if(res == 's'){
 			threshold_temp --;
 		}else if(res == '0'){
-			Usart_SendString("helloworld");
+			
 		}
 	}
 }
@@ -105,9 +103,8 @@ void TIM3_IRQHandler(void)
 {
 	if(TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET){
 
-		LED0 = !LED0;
+		HC05_Init();
 		Delay_ms(500);
-		LED0 = !LED0;
 		
 
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);

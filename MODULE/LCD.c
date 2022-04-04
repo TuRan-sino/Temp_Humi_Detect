@@ -267,7 +267,7 @@ void Lcd_Set_Cmd(u8 command, u8 data)
 
 
 /**
- * @brief 显示一个halfword
+ * @brief 显示一个halfword (UN)
  * @param data halfword的内容
  * @retval void
 */
@@ -284,7 +284,7 @@ void Lcd_Show_Halfword(const u16 data)
 
 
 /**
- * @brief 在指定位置显示一个字符
+ * @brief 在指定位置显示一个字符 (UN)
  * @param x 该字符x轴的起始地址
  * @param y 该字符y轴的起始地址
  * @param ch 该字符的内容
@@ -361,7 +361,7 @@ void Lcd_Show_Char(u16 x, u16 y, u8 ch, u8 size)
 
 
 /**
- * @brief 在某一个位置显示一个变量
+ * @brief 在某一个位置显示一个变量	(UN)
  * @param x X轴起始地址
  * @param y y轴起始地址
  * @param num 变量内容
@@ -400,7 +400,7 @@ void Lcd_Show_Variable(u16 x, u16 y, u32 num, u8 length, u8 size, u8 mode)
 
 
 /**
- * @brief 在某一个位置显示一个字符串
+ * @brief 在某一个位置显示一个字符串	(UN)
  * @param x x轴起始地址
  * @param y y轴起始地址
  * @param width 该字符串宽度
@@ -434,7 +434,7 @@ void Lcd_Show_String(u16 x, u16 y, u16 width, u16 height, u8 size, char *p)
 
 
 /**
- * @brief 在某一个地方填满
+ * @brief 在某一个地方填满颜色块	(UN)
  * @param x_start x轴起始地址
  * @param y_start y轴起始地址
  * @param x_end x轴结束地址
@@ -480,7 +480,7 @@ void Lcd_Show_Fill(u16 x_start, u16 y_start, u16 x_end, u16 y_end, u16 color)
 
 
 /**
- * @brief 显示纯净屏幕
+ * @brief 清屏 (UN)
  * @param color 显示颜色
  * @retval void
 */

@@ -21,22 +21,15 @@ Temperature and humidity detection system based on STM32
 # Feature
 通过TFTLCD与单片机相连, 使得单片机与操作者之间有一定的人机交互功能, TFTLCD中有三级菜单, 通过KEY_UP可以进入EXTI中断从而进入菜单. 进入菜单后可以对DHT11的温度阈值以及湿度阈值做出一定的控制<br>
 通过HC05与单片机相连, 从而使得操作者能够使用手机开发板, 手机向HC05输出数据, 单片机进入USART中断, 从而对手机输入的数据进行响应. 比如更改温湿度阈值, 查看当前的温湿度等<br>
-![IMG_0064](DOC/README/IMG_0064-16483976413331.jpg)
 
-![IMG_0065](DOC/README/IMG_0065-16483976413342.jpg)
-
-![IMG_0066](DOC/README/IMG_0066-16483976413343.jpg)
-
-![IMG_0067](DOC/README/IMG_0067-16483976413344.jpg)
-
-![IMG_0068](DOC/README/IMG_0068-16483976413355.jpg)
-
-![IMG_0069](DOC/README/IMG_0069-16483976413356.jpg)
-
-![IMG_0070](DOC/README/IMG_0070-16483976413357.jpg)
-
+![IMG_0064](.img/README/IMG_0064.jpg)<br>
+![IMG_0065-16483976413342](.img/README/IMG_0065-16483976413342-16490578809181.jpg)<br>
+![IMG_0066](.img/README/IMG_0066.jpg)<br>
+![IMG_0066-16483976413343](.img/README/IMG_0066-16483976413343.jpg)<br>
+![IMG_0090](.img/README/IMG_0090.jpeg)![IMG_0092](.img/README/IMG_0092.jpg)
 
 # TODO
+
 - [x] HC-05蓝牙模块
 - [x] DHT11温湿度模块
 - [x] TFTLCD模块

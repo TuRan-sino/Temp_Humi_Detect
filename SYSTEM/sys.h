@@ -56,15 +56,6 @@ void Stm32_Clock_Init(u8 PLL);
 void Init_Threshold(u32 *temp, u32 *humi);
 
 
-// typedef struct Data{
-// 	u32 Temperature;
-// 	u32 Humidity;
-// }DataPackage;
-
-// typedef struct Data_Threshold{
-// 	u32 Threshold_Temperature;
-// 	u32 Threshold_Humidity;
-// };
 
 
 #endif

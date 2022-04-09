@@ -2,6 +2,17 @@
 基于STM32的车内温湿度检测系统<br>
 Temperature and humidity detection system based on STM32
 
+# 文件夹介绍
+1. FWLIB<br>标准库函数模块代码
+1. CORE<br>芯片驱动代码
+1. SYSTEM<br>标准库函数代码
+1. BUILD<br>Vscode & keil & arm tool chain相关文件
+1. DOC<br>部分论文以及文档
+1. USER<br>自定义代码
+1. HARDWARE<br>STM32硬件部分相关代码
+1. MODULE<br>除去芯片主体部分, 模块相关代码
+
+
 # 选材
 1. 主控芯片<br>`STM32F103ZET6`
 2. 温湿度检测模块<br>`DHT-11`

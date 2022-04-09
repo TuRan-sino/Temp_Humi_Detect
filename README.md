@@ -19,10 +19,18 @@ Temperature and humidity detection system based on STM32
 3. 图形模块<br>`TFTLCD`
 4. 蓝牙模块<br>`HC-05`
 
+
 # 接线
-1. DHT11_data&emsp;&emsp;-->&emsp;&emsp;PG0<br>
-2. TFTLCD_PWR&emsp;&emsp;-->&emsp;&emsp;PG8<br>TFTLCD_RST&emsp;&emsp;-->&emsp;&emsp;PG6<br>TFTLCD_WR&emsp;&emsp;-->&emsp;&emsp;PB14<br>TFTLCD_CS&emsp;&emsp;-->&emsp;&emsp;PG7<br>
-3. HC05_RXD&emsp;&emsp;-->&emsp;&emsp;PA10<br>HC05_TXD&emsp;&emsp;-->&emsp;&emsp;PA9
+| 线路名称   | 引脚位置 |
+|------------|----------|
+| DHT11_data | PG0      |
+| TFTLCD_PWR | PG8      |
+| TFTLCD_RST | PG6      |
+| TFTLCD_WR  | PB14     |
+| TFTLCD_CS  | PG7      |
+| HC05_RXD   | PA10     |
+| HC05_TXD   | PA9      |
+
 
 # 简介
 本项目采用了正点原子的`STM32F103ZET6`开发板, 利用SPI总线协议连接`TFTLCD`模块.<br>

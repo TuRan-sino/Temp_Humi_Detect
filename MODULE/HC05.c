@@ -9,7 +9,6 @@
 #include "HC05.h"
 #include "usart.h"
 #include "delay.h"
-// #include "stdlib.h"
 
 
 extern u32 temperature;

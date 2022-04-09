@@ -50,9 +50,9 @@ void DHT11_Set_Start(void)
 {
 	DHT11_Set_OUTPUT();			// 进入发送时序, 主机首先进入t1
 	DHT11_OUT = 0;				// 先将数据线拉低, 持续20ms
-	Delay_ms(20);
+	delay_ms(20);
 	DHT11_OUT = 1;				// 将DHT11拉高,持续40us
-	Delay_us(30);
+	delay_us(30);
 }
 
 
@@ -67,7 +67,7 @@ u8 DHT11_Set_Respond(void)
 	DHT11_Set_INPUT();					// 将DHT11的数据线设置为输入模式
 	while(count < 100){		
 		if(DHT11_IN == 0) break;		// 假设在100微秒内, dht11的数据线被拉低, 则进行下一步
-		Delay_us(1);
+		delay_us(1);
 		count ++;
 	}
 	if(count >= 100) return FALSE;		// 如果100us内, dht11的数据线没有被拉低返回false
@@ -75,7 +75,7 @@ u8 DHT11_Set_Respond(void)
 	count = 0;
 	while(count < 100){		
 		if(DHT11_IN == 1)	break;		// 假设在100微秒内DHT11的数据线被拉高, 则返回TRUE
-		Delay_us(1);
+		delay_us(1);
 		count ++;
 	}
 
@@ -95,20 +95,20 @@ u8 DHT11_Read_Bit(void)
 {
 	int count = 0;
 	while(count < 100){
-		Delay_us(1);
+		delay_us(1);
 		if(DHT11_IN == 0) break;
 		count ++;
 	}
 	count = 0;
 	while(count < 100){
-		Delay_us(1);
+		delay_us(1);
 		if(DHT11_IN == 1) break;
 		count ++;
 	}
 
 	// 以上进行完成之后, DHT11完成了基本的开始时序
 
-	Delay_us(40);						// 延迟40us
+	delay_us(40);						// 延迟40us
 	if(DHT11_IN == 1) return 1;			// 假设此时被数据线被拉高则说明是0, 否则是1
 	else return 0;							
 }
@@ -167,7 +167,7 @@ u8 DHT11_Read_Data(u8 *temp, u8 *humi)
  * 			初始化时先将PG0设置为输出模式, 以便开始向data口发送开始信号
  * @retval 
 */
-void Dht11_Init(void)
+void DHT11_Init(void)
 {
 	GPIO_InitTypeDef GIT;
 	GIT.GPIO_Mode = GPIO_Mode_Out_PP;		// 设置为输出模式: 推挽输出

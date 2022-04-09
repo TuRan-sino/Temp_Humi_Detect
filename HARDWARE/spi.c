@@ -19,7 +19,7 @@
  * @brief 初始化SPI, MISO, MOSI两个以及SCK引脚全部配置成复用推挽输出模式(因为当前开发板设置为master)
  * @retval void
 */
-void Spi_Init_Spi2()
+void SPI_Init_SPI2()
 {
 	SPI_InitTypeDef SIT;
 	GPIO_InitTypeDef GIT;
@@ -58,7 +58,7 @@ void Spi_Init_Spi2()
  * @param Data [u8]: 发送的字节内容
  * @retval 通过SPI2接收到的数据
 */
-u8 Spi2_Transmit(u8 data_send)
+u8 SPI_Transmit(u8 data_send)
 {
 	u8 data_receive;
 	for(int i = 0; i < 200; i ++){
@@ -86,7 +86,7 @@ u8 Spi2_Transmit(u8 data_send)
  * @param length [u8]: 需要发送数据的长度
  * @retval STATE
 */
-u8 Spi_Write(u8 *data, u16 length)
+u8 SPI_Write(u8 *data, u16 length)
 {
 	for(int i = 0; i < length; i ++){
 		for(int j = 0; j < 200; j ++){

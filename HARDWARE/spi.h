@@ -4,8 +4,8 @@
 #include "stdbool.h"
 
 
-void Spi_Init_Spi2();
-u8 Spi2_Transmit(u8 data);
-u8 Spi_Write(u8 *data, u16 length);
+void SPI_Init_SPI2();
+u8 SPI_Transmit(u8 data);
+u8 SPI_Write(u8 *data, u16 length);
 
 #endif

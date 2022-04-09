@@ -50,19 +50,19 @@ extern u16	BACK_COLOR;		//默认背景颜色
 #define LGRAYBLUE        0XA651 
 #define LBBLUE           0X2B12
 
-void Lcd_Spi_Send(u8 *data, u32 size);
-void Lcd_Write_Data(u8 data);
-void Lcd_Write_Cmd(u8 command);
-void Lcd_Init(void);
-void Lcd_Set_Ground(u32 foreground, u32 background);
-void Lcd_Set_Address(u16 x_start, u16 y_start, u16 x_end, u16 y_end);
-void Lcd_Set_Cmd(u8 command, u8 data);
-void Lcd_Show_Char(u16 x, u16 y, u8 ch, u8 size);
-void Lcd_Show_Variable(u16 x, u16 y, u32 num, u8 length, u8 size, u8 mode);
-void Lcd_Show_String(u16 x, u16 y, u16 width, u16 height, u8 size, char *p);
-void Lcd_Show_Halfword(const u16 da);
-void Lcd_Show_Fill(u16 x_start, u16 y_start, u16 x_end, u16 y_end, u16 color);
-void Lcd_Show_Clear(u16 color);
+void LCD_Spi_Send(u8 *data, u32 size);
+void LCD_Write_Data(u8 data);
+void LCD_Write_Cmd(u8 command);
+void LCD_Init(void);
+void LCD_Set_Ground(u32 foreground, u32 background);
+void LCD_Set_Address(u16 x_start, u16 y_start, u16 x_end, u16 y_end);
+void LCD_Set_Cmd(u8 command, u8 data);
+void LCD_Show_Char(u16 x, u16 y, u8 ch, u8 size);
+void LCD_Show_Variable(u16 x, u16 y, u32 num, u8 length, u8 size, u8 mode);
+void LCD_Show_String(u16 x, u16 y, u16 width, u16 height, u8 size, char *p);
+void LCD_Show_Halfword(const u16 da);
+void LCD_Show_Fill(u16 x_start, u16 y_start, u16 x_end, u16 y_end, u16 color);
+void LCD_Show_Clear(u16 color);
 void Option_Shownumber_Temp();
 void Option_Shownumber_Humi();
 void Option_Modify_threshold(u8 choose);

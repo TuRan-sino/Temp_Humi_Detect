@@ -9,8 +9,8 @@
 #define BEEP_ON 1
 #define BEEP_OFF 0
 
-void Beep_Init(void);
-void Beep_Alarm(u32 temp, u32 humi);
+void BEEP_Init(void);
+void BEEP_Alarm(u32 temp, u32 humi);
 
 
 #endif

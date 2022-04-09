@@ -53,26 +53,26 @@ void EXTI0_IRQHandler(void)
 	u16 x_end = 240;
 
 	BEEP = BEEP_OFF;	
-	Led_Init();
-	Delay_Init();
-	Key_Init();
-	Lcd_Show_Clear(DARK);
+	LED_Init();
+	delay_Init();
+	KEY_Init();
+	LCD_Show_Clear(DARK);
 
 	while(1){
 		key = KEY_Scan(0);
-		Lcd_Set_Ground(DARK, WHITE);
-		Lcd_Show_String(60, 0, 240, 32, 32, "Option");
-		Lcd_Show_String(0, 50, 240, 32, 32, "Change Temp");
-		Lcd_Show_String(0, 100, 240, 32, 32, "Change Humi");
+		LCD_Set_Ground(DARK, WHITE);
+		LCD_Show_String(60, 0, 240, 32, 32, "Option");
+		LCD_Show_String(0, 50, 240, 32, 32, "Change Temp");
+		LCD_Show_String(0, 100, 240, 32, 32, "Change Humi");
 		if(key){
 			switch(key){
 				case KEY0_PRESS:
 					if(count % 2 == 0){
-						Lcd_Show_Fill(x_start, 50, x_end, 82, RED);
-						Lcd_Show_Fill(x_start, 100, x_end, 132, DARK);
+						LCD_Show_Fill(x_start, 50, x_end, 82, RED);
+						LCD_Show_Fill(x_start, 100, x_end, 132, DARK);
 					}else{
-						Lcd_Show_Fill(x_start, 100, x_end, 132, RED);
-						Lcd_Show_Fill(x_start, 50, x_end, 82, DARK);
+						LCD_Show_Fill(x_start, 100, x_end, 132, RED);
+						LCD_Show_Fill(x_start, 50, x_end, 82, DARK);
 					}
 					count ++;
 					break;
@@ -88,12 +88,12 @@ void EXTI0_IRQHandler(void)
 		if(TPAD_Scan(0))	break;
 	}
 
-	Lcd_Show_Clear(DARK);
-	Lcd_Set_Ground(RED, WHITE);	
-	Lcd_Show_Clear(DARK);
-	Lcd_Show_String(0, 0, 240, 32, 32, "temperature");
-	Lcd_Show_String(0, 80, 240, 32, 32, "humidity");
-	Lcd_Show_String(0, 157, 240, 32, 32, "carbon");
+	LCD_Show_Clear(DARK);
+	LCD_Set_Ground(RED, WHITE);	
+	LCD_Show_Clear(DARK);
+	LCD_Show_String(0, 0, 240, 32, 32, "temperature");
+	LCD_Show_String(0, 80, 240, 32, 32, "humidity");
+	LCD_Show_String(0, 157, 240, 32, 32, "carbon");
 
 	EXTI_ClearITPendingBit(EXTI_Line0);
 }
@@ -104,7 +104,7 @@ void TIM3_IRQHandler(void)
 	if(TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET){
 
 		HC05_Init();
-		Delay_ms(500);
+		delay_ms(500);
 		
 
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);

@@ -9,7 +9,7 @@ static u16 fac_ms = 0;
  * @brief 初始化延迟函数
  * @retval void
 */
-void Delay_Init(void)
+void delay_Init(void)
 {
 	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);			// 设置系统时钟为 HCLK 的 8分屏
 	fac_us = SystemCoreClock/8000000;								// 设置纳秒为9 (72000000 / 8000000)
@@ -22,7 +22,7 @@ void Delay_Init(void)
  * @param nums: u32 需要延迟的毫秒
  * @retval void
 */
-void Delay_us(u32 nus)
+void delay_us(u32 nus)
 {
 	u32 temp;
 	SysTick->LOAD = nus * fac_us;					// 将时间装载到LOAD寄存器上
@@ -42,7 +42,7 @@ void Delay_us(u32 nus)
  * @param nums: u16 需要延迟的微秒
  * @retval void
 */
-void Delay_ms(u16 nums)
+void delay_ms(u16 nums)
 {
 	u32 temp;
 	SysTick->LOAD = (u32)nums * fac_ms;

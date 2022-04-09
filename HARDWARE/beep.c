@@ -15,7 +15,7 @@ extern u32 threshold_humi;
 */
 
 
-void Beep_Init()
+void BEEP_Init()
 {
 	// 使能GPIOB的时钟
 	RCC->APB2ENR = 1<<3;
@@ -27,17 +27,17 @@ void Beep_Init()
 	GPIOB->CRH &= 0xfffffff3;
 }
 
-void Beep_Alarm(u32 temp, u32 humi)
+void BEEP_Alarm(u32 temp, u32 humi)
 {
 	if(temp > threshold_temp){
 		BEEP = BEEP_ON;
-		Delay_ms(500);
+		delay_ms(500);
 		BEEP = BEEP_OFF;
 	}
 
 	if(humi < threshold_humi){
 		BEEP = BEEP_ON;
-		Delay_ms(500);
+		delay_ms(500);
 		BEEP = BEEP_OFF;
 	}
 }

@@ -16,7 +16,7 @@
 #define LED_OFF 1
 
 
-void Led_Init(void);
+void LED_Init(void);
 
 
 #endif

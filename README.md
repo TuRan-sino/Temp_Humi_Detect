@@ -16,6 +16,7 @@ Temperature and humidity detection system based on STM32
 # 选材
 1. 主控芯片<br>`STM32F103ZET6`
 2. 温湿度检测模块<br>`DHT-11`
+3. 二氧化碳检测模块<br>`SGP30`
 3. 图形模块<br>`TFTLCD`
 4. 蓝牙模块<br>`HC-05`
 
@@ -38,6 +39,7 @@ Temperature and humidity detection system based on STM32
 &emsp;&emsp;本项目采用了正点原子的`STM32F103ZET6`开发板, 利用SPI总线协议连接`TFTLCD`模块.<br>
 &emsp;&emsp;`HC05`蓝牙模块的`TXD`连接单片机`USART_RXD`, `RXD`连接单片机的`USART_TXD`. 通过串口协议使得手机APP端能够与单片机通信<br>
 &emsp;&emsp;`DHT11`通过单总线通信协议与单片机相连, `DHT11`的`DATA`引脚连接单片机的`PG0`口<br>
+&emsp;&emsp;`SGP30`通过IIC通信协议与单片机相连, `SGP30`的SCL口连接开发板的PB6, `SGP30`的SDA口连接开发板的PB7
 
 # Feature
 &emsp;&emsp;本项目使用到了`usart`中断, 中断类型为`usart_itfalg_rxne`, 串口接收到数据的时候进入中断. 通过判断串口接受的数据从而做出不同的回应.<br>

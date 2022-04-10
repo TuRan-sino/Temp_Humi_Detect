@@ -30,6 +30,8 @@ Temperature and humidity detection system based on STM32
 | TFTLCD_CS  | PG7      |
 | HC05_RXD   | PA10     |
 | HC05_TXD   | PA9      |
+| SGP30_SDA  |          |
+| SGP30_SCL  |          |
 
 
 # 简介

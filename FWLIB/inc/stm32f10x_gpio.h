@@ -74,10 +74,9 @@ typedef enum
 	GPIO_Mode_IPD = 0x28,
 	GPIO_Mode_IPU = 0x48,
 	GPIO_Mode_Out_OD = 0x14,
-	GPIO_Mode_Out_PP = 0x10,
+	GPIO_Mode_Out_PP = 0x10,		// 复用推挽输出
 	GPIO_Mode_AF_OD = 0x1C,
-	// 复用推挽输出
-	GPIO_Mode_AF_PP = 0x18
+	GPIO_Mode_AF_PP = 0x18			// 复用推挽输出
 }GPIOMode_TypeDef;
 
 #define IS_GPIO_MODE(MODE) (((MODE) == GPIO_Mode_AIN) || ((MODE) == GPIO_Mode_IN_FLOATING) || \

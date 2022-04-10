@@ -2,8 +2,8 @@
 @author: TuRan
 @data: 
 @des: 	IIC相关代码
-		SDA_OUT(数据线) --> 
-		SCL(时钟线) --> 
+		SDA(数据线) --> PB7
+		SCL(时钟线) --> PB6
 ****************************************************************************************************/
 #include "iic.h"
 #include "delay.h"
@@ -86,12 +86,13 @@ u8 IIC_Wait_Ack(void)
 	delay_us(10);
 	SCL = 1;				// 将SCL置高
 	delay_us(10);
-	while(SDA_IN == 1){		// 当SDA输入为高电平时进入循环, 等待SDA_IN为低电平(有效应答)
-		wait ++;
-		if(wait > 250){
-			IIC_Stop();
-			return 1;		// 超时, 返回NACK
+	for(wait = 0; wait < 250; wait ++){
+		if(SDA_IN == 0){
+			break;
 		}
+	}
+	if(wait > 250){
+		return 1;
 	}
 	SCL = 0;
 	return 0;				// 成功, 返回ACK
@@ -176,13 +177,12 @@ u16 IIC_Read_Byte(u8 ack)
 	u16 receive = 0;
 	IIC_Set_SDA_IN();					// 将SDA设置为输入模式
 
-	for(int i = 0; i < 8; i ++){
-		// 将SCL拉低拉高, 进入读数据模式
+	for(int i = 0; i < 8; i ++){		// 将SCL拉低拉高, 进入读数据模式
 		SCL = 0;
 		delay_us(20);
 		SCL = 1;
 
-		receive <<= 1;				// 最低为为传输的方向, 1表示主设备读取数据
+		receive <<= 1;					// 最低为为传输的方向, 1表示主设备读取数据
 		if(SDA_IN == 1){
 			receive ++;
 		}
@@ -198,13 +198,13 @@ u16 IIC_Read_Byte(u8 ack)
 /**
  * @brief	IIC发送一个字节
  * @param 	txd [u8] 需要发送的字节
- * @note 	首先将时钟线拉低, 此时才能够传输数据
+ * @note 	首先将时钟线拉低, 此时才能够发送数据
 */
 void IIC_Send_Byte(u8 txd)
 {
 	u8 t;
 	IIC_Set_SDA_OUT();				// 将SDA设置为输出模式
-	SCL = 0;
+	SCL = 0;						// 拉低时钟线, 开始数据传输
 
 	for(t = 0; t < 8; t++){
 		if((txd & 0x80) >> 7)		// txd的最高位为1 --> 输出1 | txd最高位为0 --> 输出0
@@ -214,7 +214,7 @@ void IIC_Send_Byte(u8 txd)
 
 		txd <<= 1;					// 将TXD左移一位, 更新最高位
 		delay_us(20);
-		SCL = 1;
+		SCL = 1;					// 拉高时钟线, 结束数据传输
 		delay_us(20);
 		SCL = 0;
 		delay_us(20);

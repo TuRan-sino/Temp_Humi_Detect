@@ -11,7 +11,7 @@ include $(BUILD_ROOT)/target.mk
 # 包含 eide unify_builder 生成的编译器参数
 # 如果 builder.mk 文件不存在，注释以下行，并手动
 # 在后面的 “附加编译器参数” 中加入编译参数
-# include $(BUILD_ROOT)/$(CUR_TARGET)/builder.mk
+include $(BUILD_ROOT)/$(CUR_TARGET)/builder.mk
 SRC_INC = $(foreach path,$(INCLUDE_FOLDERS),$(INC_PREFIX)$(path))
 LIB_INC = $(foreach path,$(LIB_FOLDERS),$(LIB_PREFIX)$(path))
 DEFS = $(foreach str,$(DEFINES),$(DEF_PREFIX)$(str))
@@ -25,7 +25,7 @@ LDFLAGS += $(LIB_INC)
 
 # 编译器可执行文件目录, 如果路径不为空，则必须以 '/' 结尾
 # 例如：CC_FOLDER = D:/xpack-riscv-none-embed-gcc-8.3.0-2.3/bin/
-CC_FOLDER = 
+CC_FOLDER = arm-none-eabi-
 # 可执行文件前缀
 CC_PREFIX = 
 

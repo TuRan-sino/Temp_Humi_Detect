@@ -197,19 +197,22 @@ u16 IIC_Read_Byte(u8 ack)
 
 /**
  * @brief	IIC发送一个字节
- * @param txd [u8] 需要发送的字节
+ * @param 	txd [u8] 需要发送的字节
+ * @note 	首先将时钟线拉低, 此时才能够传输数据
 */
 void IIC_Send_Byte(u8 txd)
 {
 	u8 t;
-	IIC_Set_SDA_OUT();
-	SCL = 0; 	    	//拉低时钟开始数据传输
+	IIC_Set_SDA_OUT();				// 将SDA设置为输出模式
+	SCL = 0;
+
 	for(t = 0; t < 8; t++){
-		if((txd & 0x80) >> 7)
+		if((txd & 0x80) >> 7)		// txd的最高位为1 --> 输出1 | txd最高位为0 --> 输出0
 			SDA_OUT = 1;
 		else
 			SDA_OUT = 0;
-		txd <<= 1;
+
+		txd <<= 1;					// 将TXD左移一位, 更新最高位
 		delay_us(20);
 		SCL = 1;
 		delay_us(20);

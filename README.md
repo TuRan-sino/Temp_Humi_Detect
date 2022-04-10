@@ -30,8 +30,8 @@ Temperature and humidity detection system based on STM32
 | TFTLCD_CS  | PG7      |
 | HC05_RXD   | PA10     |
 | HC05_TXD   | PA9      |
-| SGP30_SDA  |          |
-| SGP30_SCL  |          |
+| SGP30_SDA  | PB7      |
+| SGP30_SCL  | PB6      |
 
 
 # 简介
@@ -56,6 +56,8 @@ Temperature and humidity detection system based on STM32
 
 - [x] HC-05蓝牙模块
 - [x] DHT11温湿度模块
+- [x] SPI协议
 - [x] TFTLCD模块
 - [x] 交互系统
-
+- [x] IIC协议
+- [x] SGP30模块

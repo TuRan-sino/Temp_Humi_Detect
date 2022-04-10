@@ -55,11 +55,14 @@ u32 SGP30_Read(void)
 
 	data = IIC_Read_Byte(1);
 	data <<= 8;
+	
 	data += IIC_Read_Byte(1);
 	crc = IIC_Read_Byte(1);			 //crc数据，舍去
 	crc = crc;
+
 	data <<= 8;
 	data += IIC_Read_Byte(1);
+
 	data <<= 8;
 	data += IIC_Read_Byte(0);
 
@@ -76,9 +79,11 @@ u32 SGP30_Read(void)
 void SGP30_Read_Data(u16 *CO2, u16 *TVOC)
 {
 	u32 temp;
-	SGP30_Write(0x20, 0x08);
+	SGP30_Write(0x20, 0x80);
 	temp = SGP30_Read();
 	*CO2 = (temp & 0xFFFF0000) >> 16;
-	*CO2 = 1105;
+	*CO2 = 475;
 	*TVOC = temp & 0x0000FFFF;
+
+
 }

@@ -16,12 +16,14 @@
 #include "usart.h"
 #include "beep.h"
 #include "SGP30.h"
+// #include "test.h"
 
 
 volatile u32 threshold_temp = 99; 
 volatile u32 threshold_humi = 0;
 volatile u32 temperature = 34;
 volatile u32 humidity = 23;
+u16 carbon = 0,  TVOC = 400;
 
 
 void Modual_Init_LCD(void);
@@ -29,7 +31,6 @@ void Modual_Init_LCD(void);
 
 int main(void)
 {
-	u16 carbon = 0,  TVOC = 0;
 
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);		// 初始化NVIC优先级分组
 	delay_Init();										// 初始化延迟函数
@@ -47,13 +48,14 @@ int main(void)
 	Modual_Init_LCD();
 
 	while(1){
-		SGP30_Read_Data(&carbon, &TVOC);
 		LCD_Set_Ground(BLUE, WHITE);
 		LCD_Show_Variable(0, 40, temperature, 4, 16, 0);
 		LCD_Show_Variable(0, 120, humidity, 4, 16, 0);
 		LCD_Show_Variable(0, 197, carbon, 4, 16, 0);
 		LCD_Show_Variable(180, 240-17, threshold_temp, 3, 16, 0);
 		LCD_Show_Variable(210, 240-17, threshold_humi, 3, 16, 0);
+
+		SGP30_Read_Data(&carbon, &TVOC);
 
 		DHT11_Read_Data((u8 *)&temperature, (u8 *)&humidity);
 

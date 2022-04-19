@@ -16,7 +16,6 @@
 #include "usart.h"
 #include "beep.h"
 #include "SGP30.h"
-// #include "test.h"
 
 
 volatile u32 threshold_temp = 99; 
@@ -27,6 +26,7 @@ u16 carbon = 0,  TVOC = 400;
 
 
 void Modual_Init_LCD(void);
+void Modual_Show_LCD(void);
 
 
 int main(void)
@@ -48,12 +48,8 @@ int main(void)
 	Modual_Init_LCD();
 
 	while(1){
-		LCD_Set_Ground(BLUE, WHITE);
-		LCD_Show_Variable(0, 40, temperature, 4, 16, 0);
-		LCD_Show_Variable(0, 120, humidity, 4, 16, 0);
-		LCD_Show_Variable(0, 197, carbon, 4, 16, 0);
-		LCD_Show_Variable(180, 240-17, threshold_temp, 3, 16, 0);
-		LCD_Show_Variable(210, 240-17, threshold_humi, 3, 16, 0);
+
+		Modual_Show_LCD();
 
 		SGP30_Read_Data(&carbon, &TVOC);
 
@@ -73,4 +69,14 @@ void Modual_Init_LCD(void)
 	LCD_Show_String(0, 0, 240, 32, 32, "temperature");
 	LCD_Show_String(0, 80, 240, 32, 32, "humidity");
 	LCD_Show_String(0, 157, 240, 32, 32, "carbon");	
+}
+
+void Modual_Show_LCD(void)
+{
+	LCD_Set_Ground(BLUE, WHITE);
+	LCD_Show_Variable(0, 40, temperature, 4, 16, 0);
+	LCD_Show_Variable(0, 120, humidity, 4, 16, 0);
+	LCD_Show_Variable(0, 197, carbon, 4, 16, 0);
+	LCD_Show_Variable(180, 240-17, threshold_temp, 3, 16, 0);
+	LCD_Show_Variable(210, 240-17, threshold_humi, 3, 16, 0);
 }

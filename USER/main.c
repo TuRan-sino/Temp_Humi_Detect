@@ -26,11 +26,12 @@ u16 carbon = 0,  TVOC = 400;
 
 
 void Modual_Init_LCD(void);
-void Modual_Show_LCD(void);
+void Modual_Show_LCD(u32 *temp, u32 *humi);
 
 
 int main(void)
 {
+	u32 temp_t = 0, temp_h = 0;
 
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);		// 初始化NVIC优先级分组
 	delay_Init();										// 初始化延迟函数
@@ -49,7 +50,7 @@ int main(void)
 
 	while(1){
 
-		Modual_Show_LCD();
+		Modual_Show_LCD(&temp_t, &temp_h);
 
 		SGP30_Read_Data(&carbon, &TVOC);
 
@@ -60,23 +61,29 @@ int main(void)
 }
 
 
-
-void Modual_Init_LCD(void)
+void Modual_Init_LCD()
 {
 	// 设置LCD底色
 	LCD_Set_Ground(RED, WHITE);	
-	LCD_Show_Clear(DARK);
+	LCD_Show_Clear(DARK);				// LCD清屏
 	LCD_Show_String(0, 0, 240, 32, 32, "temperature");
 	LCD_Show_String(0, 80, 240, 32, 32, "humidity");
 	LCD_Show_String(0, 157, 240, 32, 32, "carbon");	
 }
 
-void Modual_Show_LCD(void)
+
+void Modual_Show_LCD(u32 *temp, u32 *humi)
 {
-	LCD_Set_Ground(BLUE, WHITE);
-	LCD_Show_Variable(0, 40, temperature, 4, 16, 0);
-	LCD_Show_Variable(0, 120, humidity, 4, 16, 0);
-	LCD_Show_Variable(0, 197, carbon, 4, 16, 0);
-	LCD_Show_Variable(180, 240-17, threshold_temp, 3, 16, 0);
-	LCD_Show_Variable(210, 240-17, threshold_humi, 3, 16, 0);
+	if(temperature != *temp || humidity != *humi){		// 假设温湿度数据有一个与之前的温湿度数据不符, 则刷新温湿度数据
+		LCD_Set_Ground(BLUE, WHITE);
+		LCD_Show_Variable(0, 40, temperature, 4, 16, 0);
+		LCD_Show_Variable(0, 120, humidity, 4, 16, 0);
+		LCD_Show_Variable(0, 197, carbon, 4, 16, 0);
+		LCD_Show_Variable(180, 240-17, threshold_temp, 3, 16, 0);
+		LCD_Show_Variable(210, 240-17, threshold_humi, 3, 16, 0);
+	}
+
+	// 将之前的温湿度数据设置为新的温湿度数据
+	*temp  = temperature;
+	*humi = humidity;
 }

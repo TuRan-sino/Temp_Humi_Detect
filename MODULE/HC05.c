@@ -43,6 +43,7 @@ u8 HC05_Cal_Verify(u32 temp, u32 humi)
 	return res;
 }
 
+
 void HC05_Init()
 {
 	BLE_PACK data;

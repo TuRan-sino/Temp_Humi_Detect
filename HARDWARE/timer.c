@@ -39,7 +39,7 @@ void TIM_Init_Timer3(u16 arr, u16 psc)
 
 
 /**
- * @brief 定时器5通道2输入捕获配置
+ * @brief 定时器5通道2输入捕获配置, 用来给TPAD提供心跳
  * @param 
  * @param 
  * @retval 

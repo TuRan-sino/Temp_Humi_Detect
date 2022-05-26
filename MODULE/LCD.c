@@ -522,7 +522,7 @@ void Option_Shownumber_Temp()
 	LCD_Show_Clear(DARK);
 	
 	while(1){
-		key = KEY_Scan(1);
+		key = KEY_Scan(0);
 		LCD_Show_String(0, 0, 240, 16, 16, "Please modify your num");
 		LCD_Show_String(0, 16, 240, 32, 32, "key1 is inc");
 		LCD_Show_String(0, 16 + 32, 240, 32, 32, "key0 is dec");
@@ -560,7 +560,7 @@ void Option_Shownumber_Humi()
 
 	LCD_Show_Clear(DARK);
 	while(1){
-		key = KEY_Scan(1);
+		key = KEY_Scan(0);
 		LCD_Show_String(0, 0, 240, 16, 16, "Please modify your num");
 		LCD_Show_String(0, 16, 240, 32, 32, "key1 is inc");
 		LCD_Show_String(0, 16 + 32, 240, 32, 32, "key0 is dec");

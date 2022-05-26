@@ -93,16 +93,16 @@ u8 DHT11_Set_Respond(void)
 */
 u8 DHT11_Read_Bit(void)
 {
-	int count = 0;
+	int count = 0;			// 计数器, 用来跳出while循环, 假设在100秒以内完成时序, 则跳出那个循环
 	while(count < 100){
 		delay_us(1);
-		if(DHT11_IN == 0) break;
+		if(DHT11_IN == 0) break;	// DHT11 数据线先进入低电平
 		count ++;
 	}
 	count = 0;
 	while(count < 100){
 		delay_us(1);
-		if(DHT11_IN == 1) break;
+		if(DHT11_IN == 1) break;	// DHT11 数据线之后进入高电平
 		count ++;
 	}
 

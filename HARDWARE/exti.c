@@ -1,3 +1,8 @@
+/****************************************************************************************************
+@author: TuRan
+@data: 
+@des: 	EXTI外部中断相关代码
+****************************************************************************************************/
 #include "exti.h"
 #include "led.h"
 #include "key.h"
@@ -20,6 +25,8 @@ void EXTI_Init_Mine(void)
 	EI.EXTI_Mode = EXTI_Mode_Interrupt;
 	EI.EXTI_Trigger = EXTI_Trigger_Falling;
 	EXTI_Init(&EI);
+
+	// GPIO_EXTILineConfig(GPIO_PortSourceGPIOA, GPIO_Pin_0);
 
 	NI.NVIC_IRQChannel = EXTI0_IRQn;
 	NI.NVIC_IRQChannelCmd = ENABLE;

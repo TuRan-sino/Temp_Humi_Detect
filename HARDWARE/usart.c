@@ -1,3 +1,10 @@
+/****************************************************************************************************
+@author: TuRan
+@data: 
+@des: 	usart_rx --> PA10
+		usart_tx --> PA9
+
+****************************************************************************************************/
 #include "usart.h"
 #include "led.h"
 #include "delay.h"
@@ -10,6 +17,7 @@
  * 			usart_tx --> PA9
  * @param serial [u16] 确定串口的编号
  * @param buterate [u32] 确定串口的波特率
+ * @note 	配合HC05蓝牙进入USART中断
  * @retval void
 */
 void Usart_Init_USART1(u32 buterate)

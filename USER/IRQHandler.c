@@ -94,6 +94,12 @@ void EXTI0_IRQHandler(void)
 	LCD_Show_String(0, 0, 240, 32, 32, "temperature");
 	LCD_Show_String(0, 80, 240, 32, 32, "humidity");
 	LCD_Show_String(0, 157, 240, 32, 32, "carbon");
+	LCD_Set_Ground(BLUE, WHITE);
+	LCD_Show_Variable(0, 40, temperature, 4, 16, 0);
+	LCD_Show_Variable(0, 120, humidity, 4, 16, 0);
+	LCD_Show_Variable(0, 197, 475, 4, 16, 0);
+	LCD_Show_Variable(180, 240-17, threshold_temp, 3, 16, 0);
+	LCD_Show_Variable(210, 240-17, threshold_humi, 3, 16, 0);
 
 	EXTI_ClearITPendingBit(EXTI_Line0);
 }

@@ -18,6 +18,7 @@ typedef struct DataPackage{
 DataPackage Protocol_Init();
 void Transform_u16(u16 i, u8 *byte);
 void Protocol_Send(DataPackage data);
+void Get_NUM(u16 *co2);
 
 
 #endif

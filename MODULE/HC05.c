@@ -56,7 +56,6 @@ void HC05_Init()
 	data.verify = HC05_Cal_Verify(temperature, humidity);
 
 
-
 	HC05_SendData(data);
 	
 }

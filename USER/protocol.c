@@ -38,3 +38,8 @@ void Transform_u16(u16 i, u8 *byte)
 	byte[1] = (i & 0xFF00) >> 8;
 	byte[0] = (i & 0xFF);
 }
+
+void Get_NUM(u16 *num)
+{
+	*num = 464;
+}

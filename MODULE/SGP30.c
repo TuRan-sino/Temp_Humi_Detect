@@ -5,6 +5,7 @@
 #include "SGP30.h"
 #include "iic.h"
 #include "delay.h"
+#include "protocol.h"
 
 
 /**
@@ -39,6 +40,8 @@ void SGP30_Write(u8 a, u8 b)
 	IIC_Stop();
 	delay_ms(100);
 }
+
+
 
 
 /**
@@ -80,10 +83,10 @@ void SGP30_Read_Data(u16 *CO2, u16 *TVOC)
 {
 	u32 temp;
 	SGP30_Write(0x20, 0x80);
-	temp = SGP30_Read();
-	*CO2 = (temp & 0xFFFF0000) >> 16;
-	*CO2 = 475;
-	*TVOC = temp & 0x0000FFFF;
+	temp = SGP30_Read();				// 获取SGP30的数据
+	*CO2 = (temp & 0xFFFF0000) >> 16;	// 获取co2数值
+	Get_NUM(CO2);						// 转换成u16类型
 
-
+	*TVOC = temp & 0x0000FFFF;			// 获取甲醛数值
+	Get_NUM(TVOC);						// 转换成u16类型
 }

@@ -29,6 +29,7 @@ void Modual_Init_LCD(void);
 void Modual_Show_LCD(u32 *temp, u32 *humi);
 
 
+
 int main(void)
 {
 	u32 temp_t = 0, temp_h = 0;

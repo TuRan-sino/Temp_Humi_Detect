@@ -1,0 +1,790 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+Makefile:14: build/TuRan/builder.mk: No such file or directory
+make.exe: *** No rule to make target 'build/TuRan/builder.mk'.  Stop.
+
+# GNU Make 4.2.1
+# Built for x86_64-w64-mingw32
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sat May 28 18:37:24 2022
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
+# automatic
+?F = $(notdir $?)
+# default
+.SHELLFLAGS := -c
+# makefile
+MAKEFLAGS = prR
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
+# makefile (from 'Makefile', line 256)
+DEF_PREFIX = -D
+# makefile (from 'Makefile', line 262)
+AR_OUT_CMD = -rcv
+# makefile (from 'Makefile', line 17)
+DEFS = $(foreach str,$(DEFINES),$(DEF_PREFIX)$(str))
+# automatic
+@D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
+# environment
+HOMEDRIVE = C:
+# automatic
+@F = $(notdir $@)
+# makefile (from 'Makefile', line 77)
+LDLIBS = 
+# automatic
+^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
+# makefile
+CURDIR := c:/Users/TuRan/WORK/Temp_Humi_Detect/BUILD
+# environment
+EIDE_OPENOCD = 
+# default
+SHELL := C:/Users/TuRan/.eide/bin/builder/msys/bin/sh.exe
+# makefile (from 'Makefile', line 242)
+BIN = $(CC_FOLDER)$(CC_PREFIX)objcopy
+# makefile (from 'Makefile', line 98)
+OBJ_SRC = $(foreach path,$(filter $(OBJ_FILTER),$(OBJ_SOURCES)),$(path))
+# environment
+WINDIR = C:\Windows
+# environment
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from 'Makefile', line 240)
+SZ = $(CC_FOLDER)$(CC_PREFIX)size
+# makefile (from 'Makefile', line 65)
+CFLAGS = $(SRC_INC) $(DEFS) 
+# environment
+ONEDRIVE = C:\Users\TuRan\OneDrive
+# makefile (from 'Makefile', line 83)
+C_FILTER := %.c
+# makefile (from 'Makefile', line 251)
+AR_FLAGS = 
+# makefile (from 'Makefile', line 266)
+ELF_SUFFIX = elf
+# makefile (from 'Makefile', line 28)
+CC_FOLDER = arm-none-eabi-
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# makefile (from 'build/target.mk', line 1)
+MAKEFILE_LIST :=  Makefile build/target.mk
+# makefile (from 'Makefile', line 15)
+SRC_INC = $(foreach path,$(INCLUDE_FOLDERS),$(INC_PREFIX)$(path))
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
+# environment
+TMP = C:\Users\TuRan\AppData\Local\Temp
+# makefile (from 'Makefile', line 68)
+CXXFLAGS = $(SRC_INC) $(DEFS) 
+# makefile (from 'Makefile', line 255)
+LIB_PREFIX = -L
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 235)
+AS = $(CC_FOLDER)$(CC_PREFIX)gcc
+# environment
+PROGRAMW6432 = C:\Program Files
+# makefile (from 'Makefile', line 289)
+OBJS = $(addprefix $(BUILD_DIR)/,$(notdir $(addsuffix .$(OBJ_SUFFIX),$(basename $(C_SRC))))) $(addprefix $(BUILD_DIR)/,$(notdir $(addsuffix .$(OBJ_SUFFIX),$(basename $(CPP_SRC))))) $(addprefix $(BUILD_DIR)/,$(notdir $(addsuffix .$(OBJ_SUFFIX),$(basename $(ASM_SRC))))) $(OBJ_SRC)
+# environment
+PROGRAMDATA = C:\ProgramData
+# environment
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-5f808751-6c02-485a-9164-65d47b36d6db-sock
+# environment
+VSCODE_CWD = C:\Users\TuRan\AppData\Local\Programs\Microsoft VS Code
+# environment
+EIDE_ARM_GCC = C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\bin
+# makefile (from 'Makefile', line 254)
+INC_PREFIX = -I
+# makefile (from 'Makefile', line 71)
+ASMFLAGS = 
+# default
+MAKE_HOST := x86_64-w64-mingw32
+# environment
+PATH = C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Vim\vim82;C:\MinGw\bin;C:\Program Files\Pandoc\;C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\Users\TuRan\AppData\Local\Microsoft\WindowsApps;;C:\Users\TuRan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\TuRan\AppData\Roaming\npm;C:\Users\TuRan\.eide\bin\builder;C:\Users\TuRan\.eide\bin\builder\utils;C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\bin;C:\Users\TuRan\.eide\tools;C:\Users\TuRan\.eide\bin\builder\msys\bin
+# makefile (from 'Makefile', line 84)
+CPP_FILTER := %.cpp %c++ %cxx %cc
+# makefile (from 'Makefile', line 236)
+LD = $(CC_FOLDER)$(CC_PREFIX)gcc
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# environment
+ZES_ENABLE_SYSMAN = 1
+# makefile (from 'Makefile', line 95)
+ASM_SRC = $(foreach path,$(filter $(ASM_FILTER),$(ASM_SOURCES)),$(path))
+# environment
+PROCESSOR_ARCHITECTURE = AMD64
+# makefile (from 'Makefile', line 285)
+COLOR_DONE = "\e[32;1m"
+# environment
+USERPROFILE = C:\Users\TuRan
+# makefile (from 'Makefile', line 246)
+HEX_OUT_CMD = 
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# makefile (from 'Makefile', line 259)
+CC_OUT_CMD = -o
+# makefile (from 'Makefile', line 237)
+AR = $(CC_FOLDER)$(CC_PREFIX)ar
+# environment
+VSCODE_LOG_STACK = false
+# environment
+NUMBER_OF_PROCESSORS = 8
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from 'Makefile', line 74)
+LDFLAGS = $(LIB_INC) 
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync
+# automatic
+%F = $(notdir $%)
+# automatic
+*F = $(notdir $*)
+# makefile (from 'build/target.mk', line 76)
+ASM_SOURCES = ../CORE/startup_stm32f10x_hd.s
+# makefile (from 'Makefile', line 86)
+OBJ_FILTER := %.o %.lib %.a %.obj
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+COMPUTERNAME = DESKTOP-80OMB9H
+# environment
+PROGRAMFILES = C:\Program Files
+# makefile (from 'Makefile', line 267)
+AR_SUFFIX = a
+# makefile (from 'Makefile', line 6)
+BUILD_ROOT = build
+# default
+.LOADED := 
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+ASL.LOG = Destination=file
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# makefile (from 'Makefile', line 16)
+LIB_INC = $(foreach path,$(LIB_FOLDERS),$(LIB_PREFIX)$(path))
+# environment
+USERNAME = TuRan
+# environment
+PUBLIC = C:\Users\Public
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# makefile (from 'Makefile', line 260)
+AS_OUT_CMD = -o
+# makefile (from 'build/target.mk', line 82)
+DEFINES = STM32F10X_HD USE_STDPERIPH_DRIVER
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\TuRan\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+COMMONPROGRAMFILES = C:\Program Files\Common Files
+# environment
+LOGONSERVER = \\DESKTOP-80OMB9H
+# environment
+ONEDRIVECONSUMER = C:\Users\TuRan\OneDrive
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+USERDOMAIN = DESKTOP-80OMB9H
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# makefile (from 'Makefile', line 283)
+COLOR_END = "\e[0m"
+# default
+MAKECMDGOALS := all
+# makefile (from 'Makefile', line 241)
+HEX = $(CC_FOLDER)$(CC_PREFIX)objcopy
+# makefile (from 'Makefile', line 234)
+CC = $(CC_FOLDER)$(CC_PREFIX)gcc
+# makefile (from 'Makefile', line 40)
+BUILD_DIR := build/TuRan
+# default
+MAKE_VERSION := 4.2.1
+# makefile (from 'Makefile', line 85)
+ASM_FILTER := %.asm %.s %.a51
+# makefile (from 'Makefile', line 30)
+CC_PREFIX = 
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from 'Makefile', line 37)
+EXE_NAME := app
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# environment
+EIDE_MSYS = C:\Users\TuRan\.eide\bin\builder\msys\bin
+# automatic
+%D = $(patsubst %/,%,$(patsubst %\,%,$(dir $%)))
+# environment
+LOCALAPPDATA = C:\Users\TuRan\AppData\Local
+# makefile (from 'Makefile', line 265)
+OBJ_SUFFIX = o
+# environment
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+# default
+MAKE_COMMAND := make.exe
+# makefile (from 'build/target.mk', line 21)
+INCLUDE_FOLDERS = ../CORE ../USER ../FWLIB/inc ../SYSTEM .eide/deps ../MODULE ../HARDWARE
+# makefile (from 'Makefile', line 284)
+COLOR_WARN = "\e[33;1m"
+# default
+.VARIABLES := 
+# environment
+EIDE_TOOLS_DIR = C:\Users\TuRan\.eide\tools
+# environment
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+# environment
+OS = Windows_NT
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\fc0dea7d0a7d60723ff51af6561d9d99-1.67.2-main-sock
+# environment
+HOMEPATH = \Users\TuRan
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+PROMPT = $P$G
+# environment
+MFLAGS = -prR
+# automatic
+*D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
+# environment
+SYSTEMROOT = C:\Windows
+# automatic
++D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
+# makefile (from 'build/target.mk', line 6)
+EIDE_VER = 2
+# automatic
++F = $(notdir $+)
+# environment
+APPDATA = C:\Users\TuRan\AppData\Roaming
+# makefile (from 'Makefile', line 89)
+C_SRC = $(foreach path,$(filter $(C_FILTER),$(C_SOURCES)),$(path))
+# environment
+TEMP = C:\Users\TuRan\AppData\Local\Temp
+# environment
+COMSPEC = C:\Windows\system32\cmd.exe
+# default
+MAKEFILES := 
+# makefile (from 'Makefile', line 248)
+BIN_OUT_CMD = 
+# automatic
+<F = $(notdir $<)
+# environment
+EIDE_JLINK = 
+# makefile (from 'Makefile', line 43)
+OUTPUT_TYPE := elf
+# makefile (from 'Makefile', line 247)
+BIN_FLAGS = -O binary -S
+# environment
+LC_ALL = C
+# makefile (from 'build/target.mk', line 12)
+COMPILER_TYPE := GCC
+# makefile (from 'Makefile', line 245)
+HEX_FLAGS = -O ihex
+# automatic
+^F = $(notdir $^)
+# makefile (from 'build/target.mk', line 71)
+C_SOURCES = ../CORE/core_cm3.c ../FWLIB/src/misc.c ../FWLIB/src/stm32f10x_adc.c ../FWLIB/src/stm32f10x_bkp.c ../FWLIB/src/stm32f10x_can.c ../FWLIB/src/stm32f10x_cec.c ../FWLIB/src/stm32f10x_crc.c ../FWLIB/src/stm32f10x_dac.c ../FWLIB/src/stm32f10x_dbgmcu.c ../FWLIB/src/stm32f10x_dma.c ../FWLIB/src/stm32f10x_exti.c ../FWLIB/src/stm32f10x_flash.c ../FWLIB/src/stm32f10x_fsmc.c ../FWLIB/src/stm32f10x_gpio.c ../FWLIB/src/stm32f10x_i2c.c ../FWLIB/src/stm32f10x_iwdg.c ../FWLIB/src/stm32f10x_pwr.c ../FWLIB/src/stm32f10x_rcc.c ../FWLIB/src/stm32f10x_rtc.c ../FWLIB/src/stm32f10x_sdio.c ../FWLIB/src/stm32f10x_spi.c ../FWLIB/src/stm32f10x_tim.c ../FWLIB/src/stm32f10x_usart.c ../FWLIB/src/stm32f10x_wwdg.c ../HARDWARE/beep.c ../HARDWARE/delay.c ../HARDWARE/exti.c ../HARDWARE/iic.c ../HARDWARE/key.c ../HARDWARE/led.c ../HARDWARE/spi.c ../HARDWARE/timer.c ../HARDWARE/tpad.c ../HARDWARE/usart.c ../MODULE/DHT11.c ../MODULE/HC05.c ../MODULE/LCD.c ../MODULE/SGP30.c ../MODULE/test.c ../SYSTEM/stm32f10x_it.c ../SYSTEM/sys.c ../SYSTEM/system_stm32f10x.c ../USER/IRQHandler.c ../USER/main.c ../USER/print.c ../USER/protocol.c
+# default
+SUFFIXES := 
+# environment
+SYSTEMDRIVE = C:
+# environment
+SESSIONNAME = Console
+# environment
+PROCESSOR_REVISION = 8e0a
+# makefile (from 'Makefile', line 92)
+CPP_SRC = $(foreach path,$(filter $(CPP_FILTER),$(CPP_SOURCES)),$(path))
+# makefile (from 'Makefile', line 57)
+EXE_FILES = $(BUILD_DIR)/$(EXE_NAME).$(ELF_SUFFIX) $(BUILD_DIR)/$(EXE_NAME).hex $(BUILD_DIR)/$(EXE_NAME).bin
+# default
+.RECIPEPREFIX := 
+# makefile (from 'Makefile', line 286)
+COLOR_ERR = "\e[31;1m"
+# makefile (from 'build/target.mk', line 9)
+CUR_TARGET := TuRan
+# makefile (from 'Makefile', line 261)
+LD_OUT_CMD = -o
+# environment
+LANG = C
+# environment
+PROCESSOR_LEVEL = 6
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+# environment
+VSCODE_PID = 8860
+# environment
+USERDOMAIN_ROAMINGPROFILE = DESKTOP-80OMB9H
+# variable set hash-table stats:
+# Load=156/1024=15%, Rehash=0, Collisions=28/426=7%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# ../FWLIB/src (key c:/Users/TuRan/WORK/Temp_Humi_Detect/FWLIB/src, mtime 1644124562): No files, no impossibilities so far.
+# . (key c:/Users/TuRan/WORK/Temp_Humi_Detect/BUILD, mtime 1649577032): 16 files, no impossibilities.
+# ../MODULE (key c:/Users/TuRan/WORK/Temp_Humi_Detect/MODULE, mtime 1653612541): No files, no impossibilities so far.
+# ../CORE (key c:/Users/TuRan/WORK/Temp_Humi_Detect/CORE, mtime 1644571362): No files, no impossibilities so far.
+# ../SYSTEM (key c:/Users/TuRan/WORK/Temp_Humi_Detect/SYSTEM, mtime 1646382860): No files, no impossibilities so far.
+# ../USER (key c:/Users/TuRan/WORK/Temp_Humi_Detect/USER, mtime 1649569502): No files, no impossibilities so far.
+# build/TuRan (key c:/Users/TuRan/WORK/Temp_Humi_Detect/BUILD/build/TuRan, mtime 1653733571): No files, no impossibilities so far.
+# ../HARDWARE (key c:/Users/TuRan/WORK/Temp_Humi_Detect/HARDWARE, mtime 1649569408): No files, no impossibilities so far.
+
+# 16 files, no impossibilities in 8 directories.
+
+# Implicit Rules
+
+build/TuRan/%.o: %.c Makefile | build/TuRan
+#  recipe to execute (from 'Makefile', line 306):
+	@echo CC '$<' ...
+	@$(CC) $(CFLAGS) $< $(CC_OUT_CMD) $@
+
+build/TuRan/%.o: %.cpp Makefile | build/TuRan
+#  recipe to execute (from 'Makefile', line 311):
+	@echo CC '$<' ...
+	@$(CC) $(CXXFLAGS) $< $(CC_OUT_CMD) $@
+
+build/TuRan/%.o: %.cc Makefile | build/TuRan
+#  recipe to execute (from 'Makefile', line 314):
+	@echo CC '$<' ...
+	@$(CC) $(CXXFLAGS) $< $(CC_OUT_CMD) $@
+
+build/TuRan/%.o: %.cxx Makefile | build/TuRan
+#  recipe to execute (from 'Makefile', line 317):
+	@echo CC '$<' ...
+	@$(CC) $(CXXFLAGS) $< $(CC_OUT_CMD) $@
+
+build/TuRan/%.o: %.c++ Makefile | build/TuRan
+#  recipe to execute (from 'Makefile', line 320):
+	@echo CC '$<' ...
+	@$(CC) $(CXXFLAGS) $< $(CC_OUT_CMD) $@
+
+build/TuRan/%.o: %.s Makefile | build/TuRan
+#  recipe to execute (from 'Makefile', line 325):
+	@echo AS '$<' ...
+	@$(AS) $(ASMFLAGS) $< $(AS_OUT_CMD) $@
+
+build/TuRan/%.o: %.asm Makefile | build/TuRan
+#  recipe to execute (from 'Makefile', line 328):
+	@echo AS '$<' ...
+	@$(AS) $(ASMFLAGS) $< $(AS_OUT_CMD) $@
+
+build/TuRan/%.o: %.a51 Makefile | build/TuRan
+#  recipe to execute (from 'Makefile', line 331):
+	@echo AS '$<' ...
+	@$(AS) $(ASMFLAGS) $< $(AS_OUT_CMD) $@
+
+build/TuRan/%.hex: build/TuRan/%.elf | build/TuRan
+#  recipe to execute (from 'Makefile', line 352):
+	@$(HEX) $(HEX_FLAGS) $< $(HEX_OUT_CMD) $@
+
+build/TuRan/%.bin: build/TuRan/%.elf | build/TuRan
+#  recipe to execute (from 'Makefile', line 360):
+	@$(BIN) $(BIN_FLAGS) $< $(BIN_OUT_CMD) $@
+	
+
+# 10 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+# Not a target:
+build/TuRan/stm32f10x_exti.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_wwdg.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/app.bin:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_it.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/usart.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: build/TuRan/app.elf build/TuRan/app.hex build/TuRan/app.bin
+#  Command line target.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/sys.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/iic.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/IRQHandler.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/key.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_usart.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/HC05.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_i2c.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/test.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has not been done.
+#  Last modified 2022-04-10 15:59:21
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/builder.mk:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/led.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/core_cm3.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/TuRan:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 366):
+	mkdir $@		
+
+# Not a target:
+build/TuRan/stm32f10x_dac.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_bkp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_adc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_tim.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/protocol.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/DHT11.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_sdio.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_pwr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_fsmc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/system_stm32f10x.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/print.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_cec.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/misc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_flash.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_dma.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/app.hex:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 373):
+	-rm -fR $(BUILD_DIR)/*.$(OBJ_SUFFIX)
+	-rm -fR $(BUILD_DIR)/*.$(ELF_SUFFIX)
+	-rm -fR $(BUILD_DIR)/*.$(AR_SUFFIX) 
+	-rm -fR $(BUILD_DIR)/*.hex $(BUILD_DIR)/*.bin
+
+build/TuRan/app.a: build/TuRan/core_cm3.o build/TuRan/misc.o build/TuRan/stm32f10x_adc.o build/TuRan/stm32f10x_bkp.o build/TuRan/stm32f10x_can.o build/TuRan/stm32f10x_cec.o build/TuRan/stm32f10x_crc.o build/TuRan/stm32f10x_dac.o build/TuRan/stm32f10x_dbgmcu.o build/TuRan/stm32f10x_dma.o build/TuRan/stm32f10x_exti.o build/TuRan/stm32f10x_flash.o build/TuRan/stm32f10x_fsmc.o build/TuRan/stm32f10x_gpio.o build/TuRan/stm32f10x_i2c.o build/TuRan/stm32f10x_iwdg.o build/TuRan/stm32f10x_pwr.o build/TuRan/stm32f10x_rcc.o build/TuRan/stm32f10x_rtc.o build/TuRan/stm32f10x_sdio.o build/TuRan/stm32f10x_spi.o build/TuRan/stm32f10x_tim.o build/TuRan/stm32f10x_usart.o build/TuRan/stm32f10x_wwdg.o build/TuRan/beep.o build/TuRan/delay.o build/TuRan/exti.o build/TuRan/iic.o build/TuRan/key.o build/TuRan/led.o build/TuRan/spi.o build/TuRan/timer.o build/TuRan/tpad.o build/TuRan/usart.o build/TuRan/DHT11.o build/TuRan/HC05.o build/TuRan/LCD.o build/TuRan/SGP30.o build/TuRan/test.o build/TuRan/stm32f10x_it.o build/TuRan/sys.o build/TuRan/system_stm32f10x.o build/TuRan/IRQHandler.o build/TuRan/main.o build/TuRan/print.o build/TuRan/protocol.o build/TuRan/startup_stm32f10x_hd.o Makefile | build/TuRan
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 345):
+	@echo AR '$@' ...
+	@$(AR) $(AR_OUT_CMD) $@ $(AR_FLAGS) $(OBJS) 
+	@echo -e $(COLOR_DONE)"#################### Archive lib successfully ! ####################"$(COLOR_END)
+
+# Not a target:
+build/target.mk:
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-28 18:26:08
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_spi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/TuRan/app.elf: build/TuRan/core_cm3.o build/TuRan/misc.o build/TuRan/stm32f10x_adc.o build/TuRan/stm32f10x_bkp.o build/TuRan/stm32f10x_can.o build/TuRan/stm32f10x_cec.o build/TuRan/stm32f10x_crc.o build/TuRan/stm32f10x_dac.o build/TuRan/stm32f10x_dbgmcu.o build/TuRan/stm32f10x_dma.o build/TuRan/stm32f10x_exti.o build/TuRan/stm32f10x_flash.o build/TuRan/stm32f10x_fsmc.o build/TuRan/stm32f10x_gpio.o build/TuRan/stm32f10x_i2c.o build/TuRan/stm32f10x_iwdg.o build/TuRan/stm32f10x_pwr.o build/TuRan/stm32f10x_rcc.o build/TuRan/stm32f10x_rtc.o build/TuRan/stm32f10x_sdio.o build/TuRan/stm32f10x_spi.o build/TuRan/stm32f10x_tim.o build/TuRan/stm32f10x_usart.o build/TuRan/stm32f10x_wwdg.o build/TuRan/beep.o build/TuRan/delay.o build/TuRan/exti.o build/TuRan/iic.o build/TuRan/key.o build/TuRan/led.o build/TuRan/spi.o build/TuRan/timer.o build/TuRan/tpad.o build/TuRan/usart.o build/TuRan/DHT11.o build/TuRan/HC05.o build/TuRan/LCD.o build/TuRan/SGP30.o build/TuRan/test.o build/TuRan/stm32f10x_it.o build/TuRan/sys.o build/TuRan/system_stm32f10x.o build/TuRan/IRQHandler.o build/TuRan/main.o build/TuRan/print.o build/TuRan/protocol.o build/TuRan/startup_stm32f10x_hd.o Makefile | build/TuRan
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 336):
+	@echo LINK '$@' ...
+	@$(LD) $(OBJS) $(LDFLAGS) $(LD_OUT_CMD) $@ $(LDLIBS)
+	@$(SZ) $@
+	@echo -e $(COLOR_DONE)"#################### Build successfully ! ####################"$(COLOR_END)
+
+# Not a target:
+build/TuRan/spi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/SGP30.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/beep.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_can.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/timer.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_gpio.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/delay.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_iwdg.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/tpad.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/exti.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_crc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_rcc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/startup_stm32f10x_hd.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/LCD.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_rtc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/TuRan/stm32f10x_dbgmcu.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=60/1024=6%, Rehash=0, Collisions=5/178=3%
+# VPATH Search Paths
+
+vpath %.c ../CORE;../FWLIB/src;../HARDWARE;../MODULE;../SYSTEM;../USER
+vpath %.s ../CORE
+vpath %.asm ../CORE
+vpath %.a51 ../CORE
+
+# 4 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 93 / storage = 1714 B / avg = 18 B
+# current buf: size = 8162 B / used = 1714 B / count = 93 / avg = 18 B
+
+# strcache performance: lookups = 198 / hit rate = 53%
+# hash-table stats:
+# Load=93/8192=1%, Rehash=0, Collisions=3/198=2%
+# Finished Make data base on Sat May 28 18:37:24 2022
+
+ 

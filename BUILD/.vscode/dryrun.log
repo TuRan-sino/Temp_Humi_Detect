@@ -1,0 +1,159 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make.exe: Entering directory 'c:/Users/TuRan/WORK/Temp_Humi_Detect/BUILD'
+ 
+Makefile:14: build/TuRan/builder.mk: No such file or directory
+make.exe: *** No rule to make target 'build/TuRan/builder.mk'.
+
+make.exe: Failed to remake makefile 'build/TuRan/builder.mk'.
+
+mkdir build/TuRan		
+echo CC '../CORE/core_cm3.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../CORE/core_cm3.c -o build/TuRan/core_cm3.o
+ 
+echo CC '../FWLIB/src/misc.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/misc.c -o build/TuRan/misc.o
+ 
+echo CC '../FWLIB/src/stm32f10x_adc.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_adc.c -o build/TuRan/stm32f10x_adc.o
+ 
+echo CC '../FWLIB/src/stm32f10x_bkp.c' ...
+ 
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_bkp.c -o build/TuRan/stm32f10x_bkp.o
+ 
+echo CC '../FWLIB/src/stm32f10x_can.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_can.c -o build/TuRan/stm32f10x_can.o
+ 
+echo CC '../FWLIB/src/stm32f10x_cec.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_cec.c -o build/TuRan/stm32f10x_cec.o
+ 
+echo CC '../FWLIB/src/stm32f10x_crc.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_crc.c -o build/TuRan/stm32f10x_crc.o
+ 
+echo CC '../FWLIB/src/stm32f10x_dac.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_dac.c -o build/TuRan/stm32f10x_dac.o
+ 
+echo CC '../FWLIB/src/stm32f10x_dbgmcu.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_dbgmcu.c -o build/TuRan/stm32f10x_dbgmcu.o
+ 
+echo CC '../FWLIB/src/stm32f10x_dma.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_dma.c -o build/TuRan/stm32f10x_dma.o
+ 
+echo CC '../FWLIB/src/stm32f10x_exti.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_exti.c -o build/TuRan/stm32f10x_exti.o
+ 
+echo CC '../FWLIB/src/stm32f10x_flash.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_flash.c -o build/TuRan/stm32f10x_flash.o
+ 
+echo CC '../FWLIB/src/stm32f10x_fsmc.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_fsmc.c -o build/TuRan/stm32f10x_fsmc.o
+ 
+echo CC '../FWLIB/src/stm32f10x_gpio.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_gpio.c -o build/TuRan/stm32f10x_gpio.o
+ 
+echo CC '../FWLIB/src/stm32f10x_i2c.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_i2c.c -o build/TuRan/stm32f10x_i2c.o
+ 
+echo CC '../FWLIB/src/stm32f10x_iwdg.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_iwdg.c -o build/TuRan/stm32f10x_iwdg.o
+ 
+echo CC '../FWLIB/src/stm32f10x_pwr.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_pwr.c -o build/TuRan/stm32f10x_pwr.o
+ 
+echo CC '../FWLIB/src/stm32f10x_rcc.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_rcc.c -o build/TuRan/stm32f10x_rcc.o
+ 
+echo CC '../FWLIB/src/stm32f10x_rtc.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_rtc.c -o build/TuRan/stm32f10x_rtc.o
+ 
+echo CC '../FWLIB/src/stm32f10x_sdio.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_sdio.c -o build/TuRan/stm32f10x_sdio.o
+ 
+echo CC '../FWLIB/src/stm32f10x_spi.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_spi.c -o build/TuRan/stm32f10x_spi.o
+ 
+echo CC '../FWLIB/src/stm32f10x_tim.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_tim.c -o build/TuRan/stm32f10x_tim.o
+ 
+echo CC '../FWLIB/src/stm32f10x_usart.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_usart.c -o build/TuRan/stm32f10x_usart.o
+ 
+echo CC '../FWLIB/src/stm32f10x_wwdg.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../FWLIB/src/stm32f10x_wwdg.c -o build/TuRan/stm32f10x_wwdg.o
+ 
+echo CC '../HARDWARE/beep.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../HARDWARE/beep.c -o build/TuRan/beep.o
+ 
+echo CC '../HARDWARE/delay.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../HARDWARE/delay.c -o build/TuRan/delay.o
+ 
+echo CC '../HARDWARE/exti.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../HARDWARE/exti.c -o build/TuRan/exti.o
+ 
+echo CC '../HARDWARE/iic.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../HARDWARE/iic.c -o build/TuRan/iic.o
+ 
+echo CC '../HARDWARE/key.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../HARDWARE/key.c -o build/TuRan/key.o
+ 
+echo CC '../HARDWARE/led.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../HARDWARE/led.c -o build/TuRan/led.o
+ 
+echo CC '../HARDWARE/spi.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../HARDWARE/spi.c -o build/TuRan/spi.o
+ 
+echo CC '../HARDWARE/timer.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../HARDWARE/timer.c -o build/TuRan/timer.o
+ 
+echo CC '../HARDWARE/tpad.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../HARDWARE/tpad.c -o build/TuRan/tpad.o
+ 
+echo CC '../HARDWARE/usart.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../HARDWARE/usart.c -o build/TuRan/usart.o
+ 
+echo CC '../MODULE/DHT11.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../MODULE/DHT11.c -o build/TuRan/DHT11.o
+ 
+echo CC '../MODULE/HC05.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../MODULE/HC05.c -o build/TuRan/HC05.o
+ 
+echo CC '../MODULE/LCD.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../MODULE/LCD.c -o build/TuRan/LCD.o
+ 
+echo CC '../MODULE/SGP30.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../MODULE/SGP30.c -o build/TuRan/SGP30.o
+ 
+echo CC '../MODULE/test.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../MODULE/test.c -o build/TuRan/test.o
+ 
+echo CC '../SYSTEM/stm32f10x_it.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../SYSTEM/stm32f10x_it.c -o build/TuRan/stm32f10x_it.o
+ 
+echo CC '../SYSTEM/sys.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../SYSTEM/sys.c -o build/TuRan/sys.o
+ 
+echo CC '../SYSTEM/system_stm32f10x.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../SYSTEM/system_stm32f10x.c -o build/TuRan/system_stm32f10x.o
+ 
+echo CC '../USER/IRQHandler.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../USER/IRQHandler.c -o build/TuRan/IRQHandler.o
+ 
+echo CC '../USER/main.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../USER/main.c -o build/TuRan/main.o
+ 
+echo CC '../USER/print.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../USER/print.c -o build/TuRan/print.o
+ 
+echo CC '../USER/protocol.c' ...
+arm-none-eabi-gcc -I../CORE -I../USER -I../FWLIB/inc -I../SYSTEM -I.eide/deps -I../MODULE -I../HARDWARE -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER  ../USER/protocol.c -o build/TuRan/protocol.o
+ 
+echo AS '../CORE/startup_stm32f10x_hd.s' ...
+arm-none-eabi-gcc  ../CORE/startup_stm32f10x_hd.s -o build/TuRan/startup_stm32f10x_hd.o
+echo LINK 'build/TuRan/app.elf' ...
+arm-none-eabi-gcc build/TuRan/core_cm3.o build/TuRan/misc.o build/TuRan/stm32f10x_adc.o build/TuRan/stm32f10x_bkp.o build/TuRan/stm32f10x_can.o build/TuRan/stm32f10x_cec.o build/TuRan/stm32f10x_crc.o build/TuRan/stm32f10x_dac.o build/TuRan/stm32f10x_dbgmcu.o build/TuRan/stm32f10x_dma.o build/TuRan/stm32f10x_exti.o build/TuRan/stm32f10x_flash.o build/TuRan/stm32f10x_fsmc.o build/TuRan/stm32f10x_gpio.o build/TuRan/stm32f10x_i2c.o build/TuRan/stm32f10x_iwdg.o build/TuRan/stm32f10x_pwr.o build/TuRan/stm32f10x_rcc.o build/TuRan/stm32f10x_rtc.o build/TuRan/stm32f10x_sdio.o build/TuRan/stm32f10x_spi.o build/TuRan/stm32f10x_tim.o build/TuRan/stm32f10x_usart.o build/TuRan/stm32f10x_wwdg.o build/TuRan/beep.o build/TuRan/delay.o build/TuRan/exti.o build/TuRan/iic.o build/TuRan/key.o build/TuRan/led.o build/TuRan/spi.o build/TuRan/timer.o build/TuRan/tpad.o build/TuRan/usart.o build/TuRan/DHT11.o build/TuRan/HC05.o build/TuRan/LCD.o build/TuRan/SGP30.o build/TuRan/test.o build/TuRan/stm32f10x_it.o build/TuRan/sys.o build/TuRan/system_stm32f10x.o build/TuRan/IRQHandler.o build/TuRan/main.o build/TuRan/print.o build/TuRan/protocol.o  build/TuRan/startup_stm32f10x_hd.o    -o build/TuRan/app.elf 
+arm-none-eabi-size build/TuRan/app.elf
+echo -e "\e[32;1m""#################### Build successfully ! ####################""\e[0m"
+ 
+arm-none-eabi-objcopy -O ihex build/TuRan/app.elf  build/TuRan/app.hex
+arm-none-eabi-objcopy -O binary -S build/TuRan/app.elf  build/TuRan/app.bin
+make.exe: Leaving directory 'c:/Users/TuRan/WORK/Temp_Humi_Detect/BUILD'
+ 

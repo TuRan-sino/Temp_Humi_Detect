@@ -1,3 +1,4 @@
+#include "sgp30.h"
 #include "test.h"
 #include "delay.h"
 
@@ -161,16 +162,16 @@ u16 SGP30_IIC_Read_Byte(u8 ack)
 
 
 //初始化IIC接口
-void SGP30_Init(void)
+void SGP30_Init_T(void)
 {
   HX711_GPIO_Init();
-  SGP30_Write(0x20, 0x03);
+  SGP30_Write_T(0x20, 0x03);
 //	SGP30_ad_write(0x20,0x61);
 //	SGP30_ad_write(0x01,0x00);
 }
 
 
-void SGP30_Write(u8 a, u8 b)
+void SGP30_Write_T(u8 a, u8 b)
 {
   SGP30_IIC_Start();
   SGP30_IIC_Send_Byte(SGP30_write); //发送器件地址+写指令
@@ -183,7 +184,7 @@ void SGP30_Write(u8 a, u8 b)
   delay_ms(100);
 }
 
-u32 SGP30_Read(void)
+u32 SGP30_Read_T(void)
 {
   u32 dat;
   u8 crc;
@@ -205,11 +206,4 @@ u32 SGP30_Read(void)
 
 
 
-void SGP30_Read_Data(u16 *CO2, u16 *TVOC)
-{
-	unsigned long sgp30_data;
-	SGP30_Write(0x20, 0x80);
-	sgp30_data = SGP30_Read();
-	*CO2 = (sgp30_data & 0xFFFF0000) >> 16;
-	*TVOC = sgp30_data & 0x0000FFFF;
-}
+

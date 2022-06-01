@@ -51,7 +51,7 @@ void DHT11_Set_Start(void)
 	DHT11_Set_OUTPUT();			// 进入发送时序, 主机首先进入t1
 	DHT11_OUT = 0;				// 先将数据线拉低, 持续20ms
 	delay_ms(20);
-	DHT11_OUT = 1;				// 将DHT11拉高,持续40us
+	DHT11_OUT = 1;				// 将数据线拉高,持续40us
 	delay_us(30);
 }
 
@@ -93,21 +93,21 @@ u8 DHT11_Set_Respond(void)
 */
 u8 DHT11_Read_Bit(void)
 {
-	int count = 0;			// 计数器, 用来跳出while循环, 假设在100秒以内完成时序, 则跳出那个循环
+	int count = 0;						// 计数器, 用来跳出while循环, 假设在100秒以内完成时序, 则跳出那个循环
 	while(count < 100){
 		delay_us(1);
-		if(DHT11_IN == 0) break;	// DHT11 数据线先进入低电平
+		if(DHT11_IN == 0) break;		// DHT11 数据线先进入低电平
 		count ++;
 	}
+
 	count = 0;
 	while(count < 100){
 		delay_us(1);
-		if(DHT11_IN == 1) break;	// DHT11 数据线之后进入高电平
+		if(DHT11_IN == 1) break;		// DHT11 数据线之后进入高电平
 		count ++;
 	}
 
 	// 以上进行完成之后, DHT11完成了基本的开始时序
-
 	delay_us(40);						// 延迟40us
 	if(DHT11_IN == 1) return 1;			// 假设此时被数据线被拉高则说明是0, 否则是1
 	else return 0;							
